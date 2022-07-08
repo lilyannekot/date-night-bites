@@ -6,6 +6,7 @@ for (i = 0; i < row; i++) {
     var tblRow = tableMain.insertRow();
     for (x = 0; x < col; x++) {
         var tblCell = tblRow.insertCell();
+        tblCell.appendChild(document.createTextNode(""));
     }
 }
 };
