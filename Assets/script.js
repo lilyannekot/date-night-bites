@@ -7,6 +7,7 @@ var subBtn = document.querySelector("#subBtn")
 
 // example apiEdamam request = https://api.edamam.com/api/recipes/v2?type=public&q=chicken&health=vegan&health=vegetarian&app_key=2658fb427c224a591a4dd3e5d4db9160&app_id=8426c0e6
 
+var exampleEda = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&health=vegan&health=vegetarian&app_key=2658fb427c224a591a4dd3e5d4db9160&app_id=8426c0e6"
 
 /*
 filter types 
@@ -21,16 +22,19 @@ filter types
 
 */
 
-/* $.ajax({
-    url: apiEdamam,
+$.ajax({
+    url: exampleEda,
     method: "GET"
 }).then(function (response) {
-
-}) */
+    var first = response.hits[0].recipe
+    console.log(first)
+    var second = response.hits[1].recipe
+    console.log(second)
+})
 
 function getRecipes(event){
     event.preventDefault()
-    console.log(apiCocktailRandom)
+    console.log(exampleEda)
 }
 
 subBtn.addEventListener("click", getRecipes)
