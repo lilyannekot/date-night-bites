@@ -19,4 +19,9 @@ createTable(2, 4);
 
 //Learn more button
 var learnMore = document.createElement("button");
-learnMore.innerHTML = "Learn More";
+    learnMore.innerHTML = "Learn More";
+    learnMore.type = "submit";
+    learnMore.name = "learnMoreBtn";
+    
+
+
