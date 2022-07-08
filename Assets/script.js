@@ -173,7 +173,25 @@ function apiEdamamCall(apiEdamam){
         url: apiEdamam,
         method: "GET"
     }).then(function (response) {
+        
+        var valid = response.to
 
+        var noFood = "https://i.ebayimg.com/images/g/uuoAAOSw5wVdSXc0/s-l500.png"
+
+        console.log("valid", valid)
+        if (valid === 0){
+            head1.textContent = "No recipes for that selection"
+            img1.src = noFood
+    
+            head2.textContent = "No recipes for that selection"
+            img2.src = noFood
+    
+            head3.textContent = "No recipes for that selection"
+            img3.src = noFood
+    
+            head4.textContent = "No recipes for that selection"
+            img4.src = noFood
+        }
     // grabbing the first recipe name
         var firstLabel = response.hits[0].recipe.label
     // grabbing the first recipe image
@@ -213,6 +231,7 @@ function apiEdamamCall(apiEdamam){
 }
 
 function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage){
+
     head1.textContent = firstLabel
     img1.src = firstImg
 
@@ -224,6 +243,7 @@ function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel
 
     head4.textContent = fourthLabel
     img4.src = fourthImage
+    
 }
 
 
