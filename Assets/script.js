@@ -19,3 +19,4 @@ createTable(2, 4);
 
 //Learn more button
 var learnMore = document.createElement("button");
+learnMore.innerHTML = "Learn More";
