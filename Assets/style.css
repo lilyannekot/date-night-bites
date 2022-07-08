@@ -1,3 +1,7 @@
+:root {
+--font-color: black;
+}
+
 .hero {
     text-align: center;
 }
@@ -15,18 +19,20 @@
     padding-bottom: 700px;
 }
 
-h2 {
-    color: black;
+.column-styling {
+    color: var(--font-color);
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.column-styling h2 {
+    color: var(--font-color);
     font-size: 25px;
     text-decoration: underline;
     font-weight: bold;
+    padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.column-styling {
-    color: black;
-    background-color: rgb(230, 230, 230);
-    text-align: center;
 }
 
 .column-styling h4 {
@@ -42,4 +48,19 @@ h2 {
 
 #search-bar {
     width: 350px;
+}
+
+.favorites {
+    color: var(--font-color);
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+}
+
+.favorites h2 {
+    color: var(--font-color);
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 50%;
 }
