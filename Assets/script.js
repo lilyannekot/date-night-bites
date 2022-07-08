@@ -22,6 +22,7 @@ var learnMore = document.createElement("button");
     learnMore.innerHTML = "Learn More";
     learnMore.type = "submit";
     learnMore.name = "learnMoreBtn";
+    document.body.appendChild(learnMore);
     
 
 
