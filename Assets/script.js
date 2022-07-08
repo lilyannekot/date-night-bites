@@ -7,6 +7,7 @@ for (i = 0; i < row; i++) {
     for (x = 0; x < col; x++) {
         var tblCell = tblRow.insertCell();
         tblCell.appendChild(document.createTextNode(""));
+        tblCell.style.border = "2px solid gray";
     }
 }
 };
