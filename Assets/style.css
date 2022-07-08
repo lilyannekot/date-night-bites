@@ -10,3 +10,36 @@
     font-size: 25px;
     padding-top: 10px;
 }
+
+.field {
+    padding-bottom: 700px;
+}
+
+h2 {
+    color: black;
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.column-styling {
+    color: black;
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+}
+
+.column-styling h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.column-styling button {
+    margin-top: 15px;
+}
+
+#search-bar {
+    width: 350px;
+}
