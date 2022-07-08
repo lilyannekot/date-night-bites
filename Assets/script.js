@@ -15,3 +15,7 @@ var createTable = (row, col) => {
     tableBody.appendChild(tableMain);
 };
 createTable(2, 4);
+
+
+//Learn more button
+var learnMore = document.createElement("button");
