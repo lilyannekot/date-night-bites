@@ -1,32 +1,54 @@
-
+// edamam app key and id key
 var edamam_app_key = "&app_key=2658fb427c224a591a4dd3e5d4db9160"
 var edemam_app_id = "&app_id=8426c0e6"
-
+//-------------------------------------------------------------------------
+// thecocktaildb random cocktail request apicall
 var apiCocktailRandom = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+//-------------------------------------------------------------------------
+//submit button
 var subBtn = document.querySelector("#subBtn")
-
+//-------------------------------------------------------------------------
+//Diet checkboxes
 var highProtein = document.querySelector("#high-protein")
 var lowCarb = document.querySelector("#low-carb")
 var lowSodium = document.querySelector("#low-sodium")
-
+//-------------------------------------------------------------------------
+//Health checkboxes
 var vegan = document.querySelector("#vegan")
 var vegetarian = document.querySelector("#vegetarian")
 var paleo = document.querySelector("#paleo")
-
+//-------------------------------------------------------------------------
+//Cuisine checkboxes
 var american = document.querySelector("#american")
 var asian = document.querySelector("#asian")
 var indian = document.querySelector("#indian")
 var mediterranean = document.querySelector("#mediterranean")
-
+//-------------------------------------------------------------------------
+//Meal Type checkboxes
 var breakfast = document.querySelector("#breakfast")
 var lunch = document.querySelector("#lunch")
 var dinner = document.querySelector("#dinner")
-
+//-------------------------------------------------------------------------
+//search bar 
 var searchBar = document.querySelector("#search-bar")
+//-------------------------------------------------------------------------
+//
+
+var head1 = document.querySelector("#head1")
+var img1 = document.querySelector("#img1")
+
+var head2 = document.querySelector("#head2")
+var img2 = document.querySelector("#img2")
+
+var head3 = document.querySelector("#head3")
+var img3 = document.querySelector("#img3")
+
+var head4 = document.querySelector("#head4")
+var img4 = document.querySelector("#img4")
 
 // example apiEdamam request = https://api.edamam.com/api/recipes/v2?type=public&q=chicken&health=vegan&health=vegetarian&app_key=2658fb427c224a591a4dd3e5d4db9160&app_id=8426c0e6
 
-var exampleEda = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&health=vegan&health=vegetarian&app_key=2658fb427c224a591a4dd3e5d4db9160&app_id=8426c0e6"
+//var exampleEda = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&health=vegan&health=vegetarian&app_key=2658fb427c224a591a4dd3e5d4db9160&app_id=8426c0e6"
 
 /*
 filter types 
@@ -155,14 +177,14 @@ function apiEdamamCall(apiEdamam){
     // grabbing the first recipe name
         var firstLabel = response.hits[0].recipe.label
     // grabbing the first recipe image
-        var firstImg = response.hits[0].recipe.images.REGULAR
+        var firstImg = response.hits[0].recipe.images.REGULAR.url
 
         console.log("1st label" , firstLabel)
         console.log("1st img " ,firstImg)
     // grabbing the second recipe name
         var secondLabel = response.hits[1].recipe.label
     // grabbing the second recipe image
-        var secondImg = response.hits[1].recipe.images.REGULAR
+        var secondImg = response.hits[1].recipe.images.REGULAR.url
         
         console.log("2nd label", secondLabel)
         console.log("2nd img", secondImg)
@@ -170,7 +192,7 @@ function apiEdamamCall(apiEdamam){
     // grabbing the third recipe name
         var thirdLabel = response.hits[2].recipe.label
     // grabbing the third recipe image
-        var thirdImage = response.hits[2].recipe.images.REGULAR
+        var thirdImage = response.hits[2].recipe.images.REGULAR.url
 
         console.log("3rd label",thirdLabel)
         console.log("3rd img",thirdImage)
@@ -178,15 +200,31 @@ function apiEdamamCall(apiEdamam){
     // grabbing the fourth recipe name
         var fourthLabel = response.hits[3].recipe.label
     // grabbing the fourth recipe image
-        var fourthImage = response.hits[3].recipe.images.REGULAR
+        var fourthImage = response.hits[3].recipe.images.REGULAR.url
 
         console.log("4th label",fourthLabel)
         console.log("4th img",fourthImage)
+
+        placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage);
     })
 
-
+    
+    
 }
 
+function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage){
+    head1.textContent = firstLabel
+    img1.src = firstImg
+
+    head2.textContent = secondLabel
+    img2.src = secondImg
+
+    head3.textContent = thirdLabel
+    img3.src = thirdImage
+
+    head4.textContent = fourthLabel
+    img4.src = fourthImage
+}
 
 
 subBtn.addEventListener("click", getRecipes)
