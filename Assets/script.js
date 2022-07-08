@@ -151,14 +151,37 @@ function apiEdamamCall(apiEdamam){
         url: apiEdamam,
         method: "GET"
     }).then(function (response) {
-        var first = response.hits[0].recipe
-        console.log(first)
-        var second = response.hits[1].recipe
-        console.log(second)
-        var third = response.hits[2].recipe
-        console.log(third)
-        var fourth = response.hits[3].recipe
-        console.log(fourth)
+
+    // grabbing the first recipe name
+        var firstLabel = response.hits[0].recipe.label
+    // grabbing the first recipe image
+        var firstImg = response.hits[0].recipe.images.REGULAR
+
+        console.log("1st label" , firstLabel)
+        console.log("1st img " ,firstImg)
+    // grabbing the second recipe name
+        var secondLabel = response.hits[1].recipe.label
+    // grabbing the second recipe image
+        var secondImg = response.hits[1].recipe.images.REGULAR
+        
+        console.log("2nd label", secondLabel)
+        console.log("2nd img", secondImg)
+        
+    // grabbing the third recipe name
+        var thirdLabel = response.hits[2].recipe.label
+    // grabbing the third recipe image
+        var thirdImage = response.hits[2].recipe.images.REGULAR
+
+        console.log("3rd label",thirdLabel)
+        console.log("3rd img",thirdImage)
+    
+    // grabbing the fourth recipe name
+        var fourthLabel = response.hits[3].recipe.label
+    // grabbing the fourth recipe image
+        var fourthImage = response.hits[3].recipe.images.REGULAR
+
+        console.log("4th label",fourthLabel)
+        console.log("4th img",fourthImage)
     })
 
 
