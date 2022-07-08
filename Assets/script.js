@@ -32,7 +32,7 @@ var dinner = document.querySelector("#dinner")
 //search bar 
 var searchBar = document.querySelector("#search-bar")
 //-------------------------------------------------------------------------
-//
+//Table Ids for content to be added 
 
 var head1 = document.querySelector("#head1")
 var img1 = document.querySelector("#img1")

@@ -1,0 +1,66 @@
+:root {
+--font-color: black;
+}
+
+.hero {
+    text-align: center;
+}
+
+.title {
+    font-size: 45px;
+}
+
+.subtitle {
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.field {
+    padding-bottom: 700px;
+}
+
+.column-styling {
+    color: var(--font-color);
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.column-styling h2 {
+    color: var(--font-color);
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.column-styling h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.column-styling button {
+    margin-top: 15px;
+}
+
+#search-bar {
+    width: 350px;
+}
+
+.favorites {
+    color: var(--font-color);
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+}
+
+.favorites h2 {
+    color: var(--font-color);
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 50%;
+}
