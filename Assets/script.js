@@ -41,15 +41,7 @@ filter types
 
 */
 
-$.ajax({
-    url: exampleEda,
-    method: "GET"
-}).then(function (response) {
-    var first = response.hits[0].recipe
-    console.log(first)
-    var second = response.hits[1].recipe
-    console.log(second)
-})
+
 
 function getRecipes(event){
     //prevent default on form
@@ -149,6 +141,29 @@ function getRecipes(event){
     // adding the app_key and app_id to the end of the api request
     apiEdamam = apiEdamam + edamam_app_key + edemam_app_id
     console.log(apiEdamam + " This is the full request with all paramaters selected")
+
+    apiEdamamCall(apiEdamam);
 }
+
+function apiEdamamCall(apiEdamam){
+
+    $.ajax({
+        url: apiEdamam,
+        method: "GET"
+    }).then(function (response) {
+        var first = response.hits[0].recipe
+        console.log(first)
+        var second = response.hits[1].recipe
+        console.log(second)
+        var third = response.hits[2].recipe
+        console.log(third)
+        var fourth = response.hits[3].recipe
+        console.log(fourth)
+    })
+
+
+}
+
+
 
 subBtn.addEventListener("click", getRecipes)
