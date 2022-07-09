@@ -116,7 +116,7 @@ function getRecipes(event){
         console.log(apiEdamam + " paleo yes")
     }
 //-------------------------------------------------------------------------
-// If statments for Cuisine Type
+// If statements for Cuisine Type
     if (american.checked){
         var americanInfo = "&cuisineType=american"
         apiEdamam = apiEdamam + americanInfo
@@ -141,7 +141,7 @@ function getRecipes(event){
         console.log(apiEdamam + " medit yes")
     }
 //-------------------------------------------------------------------------
-// If statement for Meal Type
+// If statements for Meal Type
     if (breakfast){
         var breakfastInfo = "&mealType=breakfast"
         apiEdamam = apiEdamam + breakfastInfo
