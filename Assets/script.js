@@ -14,7 +14,8 @@ var createTable = (row, col) => {
             var tblCell = tblRow.insertCell();
              if (i == 1) {
                  var object = tblCell.appendChild(document.createElement("button"))
-             }
+            //     object.addEventListener("click", buttonFunction)
+           }
             tblCell.appendChild(document.createTextNode(""));
             tblCell.style.border = "2px solid gray";
             tblCell.setAttribute("id", rowName);
@@ -25,4 +26,6 @@ var createTable = (row, col) => {
 
 //amount of (rows, columns)
 createTable(2, 4);
-
+// use var buttonFunction for the "click" event listener
+// var buttonFunction (){
+// }
