@@ -105,17 +105,23 @@ footer a {
     font-size: 20px;
     padding: 3px;
     text-align: center;
+    position: relative;
+    top: 150px;
 }
 
 .logo-with-text {
-    text-align: justify;
     text-align: center;
-    width: 400px;
+    width: 300px;
 }
 
-.logo-with-text img {
+.logo-with-text p {
     display: block;
     margin: 0 auto;
+}
+
+.subscribe-cont {
+    position: relative;
+    top: 150px;
 }
 
 .subscribe-name {
@@ -125,11 +131,6 @@ footer a {
 .subscribe {
     width: 350px;
 }
-
-/* .element {
-    display: inline-block;
-    width: 400px;
-} */
 
 .slogan {
     color: var(--white);
