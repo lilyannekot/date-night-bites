@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="Assets/style.css">
     <title>Date Night Bites</title>
+    <link rel="shortcut icon" href="Assets/Images/Date Night Bites (1).png">
 </head>
 <body>
-    <section class="hero is-info">
+    <section class="hero is-info is-small" id="top-of-page">
         <div class="hero-body">
-            <p class="title">Date Night Bites</p>
+            <img src="Assets/Images/Date Night Bites (1).png" class="logo"></a>
             <p class="subtitle">Start the night off right with a deletable meal paired with a spicy cocktail and that special someone.</p>
         </div>
     <nav class="navbar" role="navigation">
         <div class="navbar-menu is-active">
             <div class="navbar-end">
                 <a class="navbar-item">Home</a>
-                <a class="navbar-item">Cocktails</a>
+                <a href="#cocktails" class="navbar-item">Cocktails</a>
                 <a class="navbar-item">About</a>
             </div>
         </div>
@@ -43,8 +44,8 @@
         <div class="column is-one-quarter">
             <!-- Top of column for filter form -->
             <div class="field row column-styling">
-                <h2>Find Your Perfect Recipe</h2>
-                <input type="text" class="input is-info is-small is-hovered" id="search-bar" placeholder="Search...">
+                <h2 id="search">Find Your Perfect Recipe</h2>
+                <input type="text" class="input is-info is-small is-hovered is-rounded" id="search-bar" placeholder="Search...">
                 <h4>Health</h4>
                 <label for="vegetarian" class="checkbox">
                     <input id="vegetarian" name="vegetarian"type="checkbox">
@@ -102,11 +103,11 @@
                     Mediterranean
                 </label>
                 <br>
-                <button type="submit" id="subBtn" class="button is-info">Search</button>
+                <button type="submit" id="submitBtn" class="button is-info is-rounded">Search</button>
             </div>
             <!-- Bottom of column for favorites -->
             <div class="favorites">
-                <h2>Favorite Recipes</h2>
+                <h2 id="favorites">Favorite Recipes</h2>
             </div>
         </div>
         <!-- Section for table and recipe to pop up -->
@@ -114,10 +115,24 @@
 
         </div>
     </div>
+    <section class="row cocktails">
+        <h2 id="cocktails">Pair Your Meal With The Perfect Cocktail</h2>
 
-    <footer class="footer has-background-info">
-        <div class="content has-text-centered">
-
+    </section>
+    <footer class="footer has-background-info columns">
+        <div class="logo-with-text column">
+            <img src="Assets/Images/Date Night Bites (1).png">
+            <p class="slogan">Start the night off right with a deletable meal paired with a spicy cocktail and that special someone.</p>
+        </div>
+        <div class="column footer-menu">
+            <a href="#top-of-page">Home</a>
+            <a href="#favorites">Favorites</a>
+            <a href="#search">Find More Recipes</a>
+        </div>
+        <br>
+        <div class="field column subscribe-cont">
+            <label class="label subscribe-name">Subscribe</label>
+            <input class="input is-rounded subscribe" placeholder="Email">
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
