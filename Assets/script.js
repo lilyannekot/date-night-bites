@@ -8,10 +8,13 @@ var createTable = (row, col) => {
     for (i = 0; i < row; i++) {
         var tblRow = tableMain.insertRow();
         for (x = 0; x < col; x++) {
+
+            //applying a unique id to the cells
             var rowName = "cell" + i + x;
             var tblCell = tblRow.insertCell();
             tblCell.appendChild(document.createTextNode(""));
             tblCell.style.border = "2px solid gray";
+            tblCell.setAttribute("id", rowName);
         }
     }
     tableBody.appendChild(tableMain);
