@@ -12,6 +12,9 @@ var createTable = (row, col) => {
             //applying a unique id to the cells
             var rowName = "cell" + i + x;
             var tblCell = tblRow.insertCell();
+             if (i == 1) {
+                 var object = tblCell.appendChild(document.createElement("button"))
+             }
             tblCell.appendChild(document.createTextNode(""));
             tblCell.style.border = "2px solid gray";
             tblCell.setAttribute("id", rowName);
@@ -22,6 +25,8 @@ var createTable = (row, col) => {
 
 //amount of (rows, columns)
 createTable(2, 4);
+
+
 
 
 //Learn more button
