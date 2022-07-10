@@ -137,31 +137,28 @@ footer a {
 }
 
 /* table styling */
-#table-container{
-    
-}
-
 table{
     width: 100%;
+    
 
 }
 .row03{
-    height: 100px;
+    height: 150px;
     background-color: var(--filter-background-color);
 }
 
 .row13{
-    background-color: var(--filter-background-color);
-    
-    
+    background-color: var(--filter-background-color);    
 }
 
 .row13 button{
-    width: 75%;
+    width: 50%;
     color: var(--white);
     background-color: #3e8ed0;
     border: none;
+    border-radius: 50%;
 }
+
 .row13 button:hover{
     background-color: rgb(35, 116, 182);
     border: none;

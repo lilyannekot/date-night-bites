@@ -12,13 +12,14 @@ var createTable = (row, col) => {
             //applying a unique id to the cells and class to rows
             var rowName = "row" + i + x;
             var cellName = "cell" + i + x;
+            var buttonName = "btn" + x;
+            var buttonPointer = document.createElement("button");
             var tblCell = tblRow.insertCell();
              if (i == 1) {
-                 var object = tblCell.appendChild(document.createElement("button"))
+                 var object = tblCell.appendChild(buttonPointer);
                  object.appendChild(document.createTextNode("Learn More"));
-            //     object.addEventListener("click", buttonFunction)
+                 buttonPointer.setAttribute("id", buttonName);
            }
-            
             tblCell.style.border = "2px solid gray";
             tblCell.setAttribute("id", cellName);
             tblRow.setAttribute("class", rowName);
@@ -31,8 +32,12 @@ var createTable = (row, col) => {
 //amount of (rows, columns)
 createTable(2, 4);
 // use var buttonFunction for the "click" event listener
+//     object.addEventListener("click", buttonFunction)
 // var buttonFunction (){
 // }
+
+// head1.appendChild("cell00")
+// img1.appendChild("cell00")
 
 
 // edamam app key and id key
