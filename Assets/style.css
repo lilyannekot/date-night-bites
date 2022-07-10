@@ -36,6 +36,7 @@
     padding-bottom: 15px;
 }
 
+/* For styling filters section in left-hand column */
 .column-styling h2 {
     color: var(--content-font-color);
     font-size: 25px;
@@ -60,6 +61,7 @@
     width: 350px;
 }
 
+/* For styling favorites section in left-hand column */
 .favorites {
     color: var(--content-font-color);
     background-color: var(--filter-background-color);
@@ -75,6 +77,7 @@
     padding-bottom: 50%;
 }
 
+/* For styling cocktails in bottom row above footer */
 .cocktails {
     text-align: center;
     font-size: 25px;
@@ -89,16 +92,11 @@
     text-decoration: underline;
 }
 
-/* footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} */
-
 footer p {
     inline-size: 400px;
 }
 
+/* Styling for footer */
 footer a {
     display: block;
     color: var(--white);
@@ -109,6 +107,7 @@ footer a {
     top: 150px;
 }
 
+/* Logo with slogan underneath in footer */
 .logo-with-text {
     text-align: center;
     width: 300px;
@@ -119,6 +118,11 @@ footer a {
     margin: 0 auto;
 }
 
+.slogan {
+    color: var(--white);
+}
+
+/* Styling subscribe element in footer */
 .subscribe-cont {
     position: relative;
     top: 150px;
@@ -132,6 +136,7 @@ footer a {
     width: 350px;
 }
 
+<<<<<<< HEAD
 .slogan {
     color: var(--white);
 }
@@ -167,3 +172,53 @@ table{
     align-content: center;
 }
 
+=======
+
+/* For changes in viewport size */
+
+@media screen and (max-width: 992px) {
+   body {
+    width: 100%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+     width: 75%;
+    }
+    .subtitle {
+        font-size: 20px;
+    }
+    .column-styling h2 {
+        font-size: 20px;
+    }
+    .column-styling h4 {
+        font-size: 15px;
+    }
+    .column-styling label {
+        font-size: 15px;
+    }
+    .favorites h2 {
+        font-size: 20px;
+    }
+    .cocktails h2 {
+        font-size: 20px;
+    }
+    #cocktail-img {
+        width: 50%;
+    }
+    .subscribe-cont {
+        text-align: center;
+    }
+    .logo-with-text {
+        align-items: center;
+        width: 75%;
+    }
+ }
+
+ @media screen and (max-width: 375px) {
+    body {
+     width: 25%;
+    }
+ }
+>>>>>>> 13e60d54490af6bf9c39321f77f9916add509a38
