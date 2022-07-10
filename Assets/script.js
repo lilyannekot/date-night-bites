@@ -1,4 +1,55 @@
 
+<<<<<<< HEAD
+//Table function
+var createTable = (row, col) => {
+    var tableBody = document.body;
+    var tableMain = document.createElement("table");
+
+//for loop to insert rows and columns
+    for (i = 0; i < row; i++) {
+        var tblRow = tableMain.insertRow();
+        for (x = 0; x < col; x++) {
+
+            //applying a unique id to the cells and class to rows
+            var rowName = "row" + i + x;
+            var cellName = "cell" + i + x;
+            var buttonName = "btn" + x;
+            // var tableTag = document.createElement("p")
+            var buttonPointer = document.createElement("button")
+            var tblCell = tblRow.insertCell()
+             if (i == 1) {
+                 var object = tblCell.appendChild(buttonPointer)
+                 object.appendChild(document.createTextNode("Learn More"))
+                 buttonPointer.setAttribute("id", buttonName)
+           }
+            tblCell.style.border = "2px solid gray"
+            tblCell.setAttribute("id", cellName)
+            tblRow.setAttribute("class", rowName)
+            // var tableText = document.createTextNode("TEST TEXT")
+            // tableTag.appendChild(tableText)
+            
+            
+        }
+    }
+    tableBody.appendChild(tableMain)
+    document.getElementById("table-container").appendChild(tableMain)
+};
+
+//amount of (rows, columns)
+createTable(2, 4);
+// use var buttonFunction for the "click" event listener
+//     object.addEventListener("click", buttonFunction)
+// var buttonFunction (){
+// }
+
+// head1.appendChild("cell00")
+// img1.appendChild("cell00")
+
+
+
+
+=======
+>>>>>>> 13e60d54490af6bf9c39321f77f9916add509a38
 // edamam app key and id key
 var edamam_app_key = "&app_key=2658fb427c224a591a4dd3e5d4db9160"
 var edemam_app_id = "&app_id=8426c0e6"
@@ -193,6 +244,7 @@ Need to add <img tags> inside table for validator when table is added
 
 
 */
+
 function apiEdamamCall(apiEdamam){
 
     $.ajax({

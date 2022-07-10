@@ -136,6 +136,43 @@ footer a {
     width: 350px;
 }
 
+<<<<<<< HEAD
+.slogan {
+    color: var(--white);
+}
+
+/* table styling */
+table{
+    width: 100%;
+    
+
+}
+.row03{
+    height: 150px;
+    background-color: var(--filter-background-color);
+}
+
+.row13{
+    background-color: var(--filter-background-color);    
+}
+
+.row13 button{
+    width: 50%;
+    color: var(--white);
+    background-color: #3e8ed0;
+    border: none;
+    border-radius: 50%;
+}
+
+.row13 button:hover{
+    background-color: rgb(35, 116, 182);
+    border: none;
+}
+#btn1{
+    align-content: center;
+}
+
+=======
 
 /* For changes in viewport size */
 
@@ -184,3 +221,4 @@ footer a {
      width: 25%;
     }
  }
+>>>>>>> 13e60d54490af6bf9c39321f77f9916add509a38
