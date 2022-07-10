@@ -82,7 +82,6 @@
     text-align: center;
     font-size: 25px;
     color: var(--content-font-color);
-    text-decoration: underline;
     padding-top: 15px;
     padding-bottom: 300px;
     background-color: var(--filter-background-color);
@@ -90,6 +89,7 @@
 
 .cocktails h2 {
     font-weight: bold;
+    text-decoration: underline;
 }
 
 footer p {
