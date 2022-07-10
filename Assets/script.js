@@ -198,7 +198,7 @@ function apiEdamamCall(apiEdamam){
         url: apiEdamam,
         method: "GET"
     }).then(function (response) {
-        
+        //validator for the web page
         var valid = response.to
 
         var noFood = "https://i.ebayimg.com/images/g/uuoAAOSw5wVdSXc0/s-l500.png"
@@ -252,8 +252,7 @@ function apiEdamamCall(apiEdamam){
     })
 
     
-    
-}
+}   
 /*
 function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage){
 
@@ -408,3 +407,21 @@ function cocktailReset(){
     cocHelp.textContent = ""
 }
 subBtn.addEventListener("click", getRecipes)
+
+
+/* 
+var favloc = document.querySelector("favBtn")
+function favload(){
+    var favMeals = localStorage.getItem("favMeals")
+    if (favMeals === null){
+        favMeals = []
+    }else {
+        favMeals = JSON.parse(favMeals)
+    }
+}
+
+function makeFav(){
+    var favData = event.target.data.value
+    favData = JSON.stringify(favData)
+}
+*/
