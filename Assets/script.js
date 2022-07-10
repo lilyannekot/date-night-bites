@@ -48,7 +48,13 @@ var img4 = document.querySelector("#img4")
 // Cocktail div Ids
 
 var cocktailImage = document.querySelector("#cocktail-img")
-var cocktailDiv = document.querySelector("#cocktails-info")
+var cocktailDiv = document.querySelector("#cocktail-info")
+var cocktailSection = document.querySelector("#cocktail-section")
+
+var cocHead = document.querySelector("#divHead")
+var cocCat = document.querySelector("#one")
+var cocIMA = document.querySelector("#two")
+var cocHelp = document.querySelector("#three")
 //-------------------------------------------------------------------------
 // example apiEdamam request = https://api.edamam.com/api/recipes/v2?type=public&q=chicken&health=vegan&health=vegetarian&app_key=2658fb427c224a591a4dd3e5d4db9160&app_id=8426c0e6
 
@@ -70,6 +76,9 @@ filter types
 
 
 function getRecipes(event){
+
+    cocktailReset();
+
     // thecocktaildb random cocktail request apicall
     var apiCocktailRandom = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
     //prevent default on form
@@ -373,21 +382,32 @@ function generateCocktail(drinkName, drinkImg, drinkCategory, drinkInstructions,
     cocktailImage.setAttribute("src", drinkImg)
     cocktailImage.setAttribute("alt", drinkName)
 
-    var drinkHead = document.createElement("h2")
-    drinkHead.textContent = drinkName
-    cocktailDiv.appendChild(drinkHead)
-    var drinkType = document.createElement("p")
-    drinkType.textContent = drinkCategory
-    cocktailDiv.appendChild(drinkType)
+   
+    cocHead.textContent = drinkName
+    
+    
+    cocCat.textContent = drinkCategory
+    
     for (var i = 0; i < drinkIMA.length; i++){
-        if (drinkIMA[i] !== 1){
-            var drinkMake = document.createElement('p')
-            drinkMake.textContent = drinkIMA[i]
-            cocktailDiv.appendChild(drinkMake)
+        if (drinkIMA[0] !== 1){
+            var coctext = ""
+            coctext = drinkIMA[0]
+            
+        }else if (drinkIMA[i] !== 1){
+            coctext = coctext + " " + drinkIMA[i] 
         }else{
             return;
         }
     }
+    cocIMA.textContent = coctext
+    cocHelp.textContent = drinkInstructions
+    
+}
 
+function cocktailReset(){
+    cocHead.textContent = ""
+    cocCat.textContent = ""
+    cocIMA.textContent = ""
+    cocHelp.textContent = ""
 }
 subBtn.addEventListener("click", getRecipes)
