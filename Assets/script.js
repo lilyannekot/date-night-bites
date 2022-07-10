@@ -48,6 +48,7 @@ var img4 = document.querySelector("#img4")
 // Cocktail div Ids
 
 var cocktailImage = document.querySelector("#cocktail-img")
+var cocktailDiv = document.querySelector("#cocktails-info")
 //-------------------------------------------------------------------------
 // example apiEdamam request = https://api.edamam.com/api/recipes/v2?type=public&q=chicken&health=vegan&health=vegetarian&app_key=2658fb427c224a591a4dd3e5d4db9160&app_id=8426c0e6
 
@@ -374,7 +375,19 @@ function generateCocktail(drinkName, drinkImg, drinkCategory, drinkInstructions,
 
     var drinkHead = document.createElement("h2")
     drinkHead.textContent = drinkName
+    cocktailDiv.appendChild(drinkHead)
     var drinkType = document.createElement("p")
     drinkType.textContent = drinkCategory
+    cocktailDiv.appendChild(drinkType)
+    for (var i = 0; i < drinkIMA.length; i++){
+        if (drinkIMA[i] !== 1){
+            var drinkMake = document.createElement('p')
+            drinkMake.textContent = drinkIMA[i]
+            cocktailDiv.appendChild(drinkMake)
+        }else{
+            return;
+        }
+    }
+
 }
 subBtn.addEventListener("click", getRecipes)
