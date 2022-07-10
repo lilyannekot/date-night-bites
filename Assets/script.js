@@ -48,8 +48,7 @@ var img4 = document.querySelector("#img4")
 // Cocktail div Ids
 
 var cocktailImage = document.querySelector("#cocktail-img")
-var cocktailDiv = document.querySelector("#cocktail-info")
-var cocktailSection = document.querySelector("#cocktail-section")
+
 
 var cocHead = document.querySelector("#divHead")
 var cocCat = document.querySelector("#one")
@@ -389,12 +388,10 @@ function generateCocktail(drinkName, drinkImg, drinkCategory, drinkInstructions,
     cocCat.textContent = drinkCategory
     
     for (var i = 0; i < drinkIMA.length; i++){
-        if (drinkIMA[0] !== 1){
-            var coctext = ""
-            coctext = drinkIMA[0]
-            
-        }else if (drinkIMA[i] !== 1){
-            coctext = coctext + " " + drinkIMA[i] 
+        var coctext = drinkIMA[0]
+
+        if (drinkIMA[i] !== 1){
+            coctext = coctext + ", " + drinkIMA[i] 
         }else{
             return;
         }
