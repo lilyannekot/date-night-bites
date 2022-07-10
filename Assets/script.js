@@ -9,19 +9,23 @@ var createTable = (row, col) => {
         var tblRow = tableMain.insertRow();
         for (x = 0; x < col; x++) {
 
-            //applying a unique id to the cells
-            var rowName = "cell" + i + x;
+            //applying a unique id to the cells and class to rows
+            var rowName = "row" + i + x;
+            var cellName = "cell" + i + x;
             var tblCell = tblRow.insertCell();
              if (i == 1) {
                  var object = tblCell.appendChild(document.createElement("button"))
+                 object.appendChild(document.createTextNode("Learn More"));
             //     object.addEventListener("click", buttonFunction)
            }
-            tblCell.appendChild(document.createTextNode(""));
+            
             tblCell.style.border = "2px solid gray";
-            tblCell.setAttribute("id", rowName);
+            tblCell.setAttribute("id", cellName);
+            tblRow.setAttribute("class", rowName);
         }
     }
     tableBody.appendChild(tableMain);
+    document.getElementById("table-container").appendChild(tableMain);
 };
 
 //amount of (rows, columns)
