@@ -410,7 +410,7 @@ subBtn.addEventListener("click", getRecipes)
 
 
 /* 
-var favloc = document.querySelector("favBtn")
+var favloc = document.querySelector("#FavBtn")
 function favload(){
     var favMeals = localStorage.getItem("favMeals")
     if (favMeals === null){
@@ -418,10 +418,25 @@ function favload(){
     }else {
         favMeals = JSON.parse(favMeals)
     }
+    var favDiv = document.querySelector("#localFav")
+    for (var i = 0; i < favMeals; i++){
+        var localP = document.createElement("p")
+        localP.textContent = favMeals[i]
+        favDiv.appendChild(localP)
+    }
 }
 
 function makeFav(){
+    
     var favData = event.target.data.value
     favData = JSON.stringify(favData)
+    var favMeals = localStorage.getItem("favMeals")
+    if (favMeals === null){
+        favMeals = []
+    }else {
+        favMeals[favMeals.length] = favData
+    }
+    favMeals = JSON.stringify(favMeals)
+    localStorage.setItem("favoritesData", favMeals)
 }
 */
