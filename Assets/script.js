@@ -13,20 +13,25 @@ var createTable = (row, col) => {
             var rowName = "row" + i + x;
             var cellName = "cell" + i + x;
             var buttonName = "btn" + x;
-            var buttonPointer = document.createElement("button");
-            var tblCell = tblRow.insertCell();
+            // var tableTag = document.createElement("p")
+            var buttonPointer = document.createElement("button")
+            var tblCell = tblRow.insertCell()
              if (i == 1) {
-                 var object = tblCell.appendChild(buttonPointer);
-                 object.appendChild(document.createTextNode("Learn More"));
-                 buttonPointer.setAttribute("id", buttonName);
+                 var object = tblCell.appendChild(buttonPointer)
+                 object.appendChild(document.createTextNode("Learn More"))
+                 buttonPointer.setAttribute("id", buttonName)
            }
-            tblCell.style.border = "2px solid gray";
-            tblCell.setAttribute("id", cellName);
-            tblRow.setAttribute("class", rowName);
+            tblCell.style.border = "2px solid gray"
+            tblCell.setAttribute("id", cellName)
+            tblRow.setAttribute("class", rowName)
+            // var tableText = document.createTextNode("TEST TEXT")
+            // tableTag.appendChild(tableText)
+            
+            
         }
     }
-    tableBody.appendChild(tableMain);
-    document.getElementById("table-container").appendChild(tableMain);
+    tableBody.appendChild(tableMain)
+    document.getElementById("table-container").appendChild(tableMain)
 };
 
 //amount of (rows, columns)
@@ -38,6 +43,8 @@ createTable(2, 4);
 
 // head1.appendChild("cell00")
 // img1.appendChild("cell00")
+
+
 
 
 // edamam app key and id key
@@ -234,6 +241,7 @@ Need to add <img tags> inside table for validator when table is added
 
 
 */
+
 function apiEdamamCall(apiEdamam){
 
     $.ajax({

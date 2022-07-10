@@ -163,5 +163,7 @@ table{
     background-color: rgb(35, 116, 182);
     border: none;
 }
-
+#btn1{
+    align-content: center;
+}
 
