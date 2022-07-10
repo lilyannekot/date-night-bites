@@ -273,7 +273,8 @@ function apiCocktailCall(apiCocktailRandom){
     var drinkIngredients = []
     var drinkMixAmount = []
     var drinkIMA = []
-    
+    var drinkImg = response.drinks[0].strDrinkThumb
+    console.log("Drink Image", drinkImg)
     if (response.drinks[0].strIngredient1 !== null && response.drinks[0].strIngredient1 !== undefined){
         drinkIngredients[0] = response.drinks[0].strIngredient1
         drinkMixAmount[0] = response.drinks[0].strMeasure1
@@ -358,8 +359,12 @@ function apiCocktailCall(apiCocktailRandom){
     }
 
     console.log(drinkIMA)
-    console.log()
+
+    generateCocktail(drinkName, drinkImg, drinkCategory, drinkInstructions, drinkIMA);
     })
 }
 
+function generateCocktail(drinkName, drinkImg, drinkCategory, drinkInstructions, drinkIMA){
+    
+}
 subBtn.addEventListener("click", getRecipes)
