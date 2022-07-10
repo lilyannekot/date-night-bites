@@ -1,12 +1,137 @@
+:root {
+--content-font-color: black;
+--white: white;
+--blue: hsl(217, 71%, 53%);
+--filter-background-color: rgb(230, 230, 230);
+}
+
 .hero {
     text-align: center;
 }
 
-.title {
-    font-size: 45px;
+.logo {
+    height: 300px;
+    width: 400px;
 }
 
 .subtitle {
     font-size: 25px;
+    padding-top: 0px;
+}
+
+.navbar {
+    position: fixed;
+    background-color: var(--blue) !important;
+    width: 100%;
+}
+
+.field {
+    padding-bottom: 700px;
+}
+
+.column-styling {
+    color: var(--content-font-color);
+    background-color: var(--filter-background-color);
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.column-styling h2 {
+    color: var(--content-font-color);
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
     padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.column-styling h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.column-styling button {
+    margin-top: 15px;
+}
+
+#search-bar {
+    width: 350px;
+}
+
+.favorites {
+    color: var(--content-font-color);
+    background-color: var(--filter-background-color);
+    text-align: center;
+}
+
+.favorites h2 {
+    color: var(--content-font-color);
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 50%;
+}
+
+.cocktails {
+    text-align: center;
+    font-size: 25px;
+    color: var(--content-font-color);
+    padding-top: 15px;
+    padding-bottom: 300px;
+    background-color: var(--filter-background-color);
+}
+
+.cocktails h2 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+
+footer p {
+    inline-size: 400px;
+}
+
+footer a {
+    display: block;
+    color: var(--white);
+    font-size: 20px;
+    padding: 3px;
+    text-align: center;
+    position: relative;
+    top: 150px;
+}
+
+.logo-with-text {
+    text-align: center;
+    width: 300px;
+}
+
+.logo-with-text p {
+    display: block;
+    margin: 0 auto;
+}
+
+.subscribe-cont {
+    position: relative;
+    top: 150px;
+}
+
+.subscribe-name {
+    color: var(--white);
+}
+
+.subscribe {
+    width: 350px;
+}
+
+.slogan {
+    color: var(--white);
 }
