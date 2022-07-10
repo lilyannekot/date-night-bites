@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 //Table function
 var createTable = (row, col) => {
     var tableBody = document.body;
@@ -48,8 +47,6 @@ createTable(2, 4);
 
 
 
-=======
->>>>>>> 13e60d54490af6bf9c39321f77f9916add509a38
 // edamam app key and id key
 var edamam_app_key = "&app_key=2658fb427c224a591a4dd3e5d4db9160"
 var edemam_app_id = "&app_id=8426c0e6"
@@ -241,9 +238,12 @@ function getRecipes(event){
 
 Need to add <img tags> inside table for validator when table is added
 
-
-
 */
+
+
+
+
+
 
 function apiEdamamCall(apiEdamam){
 
@@ -302,9 +302,28 @@ function apiEdamamCall(apiEdamam){
         console.log("4th img",fourthImage)
 
        // placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage);
+
+
+
+       //table url variable array
+       var tableArr = []
+       tableArr[0] = response.hits[0]._links.self.href
+       console.log("firstURL", firstURL)
+
+       tableArr[1] = response.hits[1]._links.self.href
+       console.log("secondURL", secondURL)
+
+       tableArr[2] = response.hits[2]._links.self.href
+       console.log("thirdURL", thirdURL)
+
+       tableArr[3] = response.hits[3]._links.self.href
+       console.log("fourthURL", fourthURL)
+
+       
+
     })
 
-    
+    return tableArr
     
 }
 /*

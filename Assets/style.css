@@ -136,7 +136,6 @@ footer a {
     width: 350px;
 }
 
-<<<<<<< HEAD
 .slogan {
     color: var(--white);
 }
@@ -162,17 +161,16 @@ table{
     background-color: #3e8ed0;
     border: none;
     border-radius: 50%;
+    display: block;
+    margin: auto;
 }
 
 .row13 button:hover{
     background-color: rgb(35, 116, 182);
     border: none;
 }
-#btn1{
-    align-content: center;
-}
 
-=======
+
 
 /* For changes in viewport size */
 
@@ -221,4 +219,3 @@ table{
      width: 25%;
     }
  }
->>>>>>> 13e60d54490af6bf9c39321f77f9916add509a38
