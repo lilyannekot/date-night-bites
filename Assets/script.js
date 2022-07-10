@@ -273,7 +273,7 @@ function apiCocktailCall(apiCocktailRandom){
     var drinkIngredients = []
     var drinkMixAmount = []
     var drinkIMA = []
-    /*
+    
     if (response.drinks[0].strIngredient1 !== null && response.drinks[0].strIngredient1 !== undefined){
         drinkIngredients[0] = response.drinks[0].strIngredient1
         drinkMixAmount[0] = response.drinks[0].strMeasure1
@@ -356,7 +356,7 @@ function apiCocktailCall(apiCocktailRandom){
             drinkIMA[i] = 1
         }
     }
-*/
+
     console.log(drinkIMA)
     console.log()
     })
