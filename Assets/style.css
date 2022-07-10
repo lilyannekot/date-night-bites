@@ -135,3 +135,23 @@ footer a {
 .slogan {
     color: var(--white);
 }
+
+/* For changes in viewport size */
+
+@media screen and (max-width: 992px) {
+   body {
+    width: 100%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+     width: 50%;
+    }
+ }
+
+ @media screen and (max-width: 375px) {
+    body {
+     width: 25%;
+    }
+ }

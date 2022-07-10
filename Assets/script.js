@@ -1,3 +1,5 @@
+
+// Save favorites to local storage
 // edamam app key and id key
 var edamam_app_key = "&app_key=2658fb427c224a591a4dd3e5d4db9160"
 var edemam_app_id = "&app_id=8426c0e6"
@@ -116,7 +118,7 @@ function getRecipes(event){
         console.log(apiEdamam + " paleo yes")
     }
 //-------------------------------------------------------------------------
-// If statments for Cuisine Type
+// If statements for Cuisine Type
     if (american.checked){
         var americanInfo = "&cuisineType=american"
         apiEdamam = apiEdamam + americanInfo
@@ -141,7 +143,7 @@ function getRecipes(event){
         console.log(apiEdamam + " medit yes")
     }
 //-------------------------------------------------------------------------
-// If statement for Meal Type
+// If statements for Meal Type
     if (breakfast){
         var breakfastInfo = "&mealType=breakfast"
         apiEdamam = apiEdamam + breakfastInfo
