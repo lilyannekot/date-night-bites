@@ -1,19 +1,19 @@
 
 //Table function
 var createTable = (row, col) => {
-    var tableBody = document.body;
-    var tableMain = document.createElement("table");
-
+    
+    var tableBody = document.body
+    var tableMain = document.createElement("table")
 //for loop to insert rows and columns
     for (i = 0; i < row; i++) {
-        var tblRow = tableMain.insertRow();
+        var tblRow = tableMain.insertRow()
         for (x = 0; x < col; x++) {
 
             //applying a unique id to the cells and class to rows
-            var rowName = "row" + i + x;
-            var cellName = "cell" + i + x;
-            var buttonName = "btn" + x;
-            // var tableTag = document.createElement("p")
+            var rowName = "row" + i + x
+            var cellName = "cell" + i + x
+            var buttonName = "btn" + x
+            
             var buttonPointer = document.createElement("button")
             var tblCell = tblRow.insertCell()
              if (i == 1) {
@@ -24,27 +24,63 @@ var createTable = (row, col) => {
             tblCell.style.border = "2px solid gray"
             tblCell.setAttribute("id", cellName)
             tblRow.setAttribute("class", rowName)
-            // var tableText = document.createTextNode("TEST TEXT")
-            // tableTag.appendChild(tableText)
-            
+
+            tableBody.appendChild(tableMain)
+            document.getElementById("table-container").appendChild(tableMain)
+             
             
         }
     }
-    tableBody.appendChild(tableMain)
-    document.getElementById("table-container").appendChild(tableMain)
-};
+    
+    
+    createTableTags();
+}
+
+function createTableTags(){
+    var cell1 = document.querySelector("#cell00")
+    var cell2 = document.querySelector("#cell01")
+    var cell3 = document.querySelector("#cell02")
+    var cell4 = document.querySelector("#cell03")
+
+    var cellHead = document.createElement("h2")
+    cellHead.textContent = ""
+    cellHead.setAttribute("id", "cell1-head")
+    cell1.appendChild(cellHead)
+    var cellImg = document.createElement("img")
+    cellImg.setAttribute("id", "cell1-img")
+    cellImg.setAttribute("src", "")
+    cell1.appendChild(cellImg)
+
+    var cellHead2 = document.createElement("h2")
+    cellHead2.textContent = ""
+    cellHead2.setAttribute("id", "cell2-head")
+    cell2.appendChild(cellHead2)
+    var cellImg2 = document.createElement("img")
+    cellImg2.setAttribute("id", "cell2-img")
+    cellImg2.setAttribute("src", "")
+    cell2.appendChild(cellImg2)
+
+    var cellHead3 = document.createElement("h2")
+    cellHead3.textContent = ""
+    cellHead3.setAttribute("id", "cell3-head")
+    cell3.appendChild(cellHead3)
+    var cellImg3 = document.createElement("img")
+    cellImg3.setAttribute("id", "cell3-img")
+    cellImg3.setAttribute("src", "")
+    cell3.appendChild(cellImg3)
+
+    var cellHead4 = document.createElement("h2")
+    cellHead4.textContent = ""
+    cellHead4.setAttribute("id", "cell4-head")
+    cell4.appendChild(cellHead4)
+    var cellImg4 = document.createElement("img")
+    cellImg4.setAttribute("id", "cell4-img")
+    cellImg4.setAttribute("src", "")
+    cell4.appendChild(cellImg4)
+}
 
 //amount of (rows, columns)
-createTable(2, 4);
-// use var buttonFunction for the "click" event listener
-//     object.addEventListener("click", buttonFunction)
-// var buttonFunction (){
-// }
-
-// head1.appendChild("cell00")
-// img1.appendChild("cell00")
-
-
+createTable(2, 4)
 
 
 // edamam app key and id key
@@ -82,17 +118,17 @@ var searchBar = document.querySelector("#search-bar")
 //-------------------------------------------------------------------------
 //Table Ids for content to be added 
 
-var head1 = document.querySelector("#head1")
-var img1 = document.querySelector("#img1")
+var head1 = document.querySelector("#cell1-head")
+var img1 = document.querySelector("#cell1-img")
 
-var head2 = document.querySelector("#head2")
-var img2 = document.querySelector("#img2")
+var head2 = document.querySelector("#cell2-head")
+var img2 = document.querySelector("#cell2-img")
 
-var head3 = document.querySelector("#head3")
-var img3 = document.querySelector("#img3")
+var head3 = document.querySelector("#cell3-head")
+var img3 = document.querySelector("#cell3-img")
 
-var head4 = document.querySelector("#head4")
-var img4 = document.querySelector("#img4")
+var head4 = document.querySelector("#cell4-head")
+var img4 = document.querySelector("#cell4-img")
 //-------------------------------------------------------------------------
 // Cocktail div Ids
 
@@ -231,16 +267,9 @@ function getRecipes(event){
     apiEdamamCall(apiEdamam);
     
 }
-/*
 
 
 
-
-Need to add <img tags> inside table for validator when table is added
-
-
-
-*/
 
 function apiEdamamCall(apiEdamam){
 
@@ -248,7 +277,7 @@ function apiEdamamCall(apiEdamam){
         url: apiEdamam,
         method: "GET"
     }).then(function (response) {
-        
+        //validator for the web page
         var valid = response.to
 
         var noFood = "https://i.ebayimg.com/images/g/uuoAAOSw5wVdSXc0/s-l500.png"
@@ -298,13 +327,260 @@ function apiEdamamCall(apiEdamam){
         console.log("4th label",fourthLabel)
         console.log("4th img",fourthImage)
 
-       // placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage);
-    })
+        placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage);
 
-    
+
+
+       //table url variable array
+       tableArr = []
+       tableArr[0] = response.hits[0]._links.self.href
+       console.log("firstURL", tableArr[0])
+
+       tableArr[1] = response.hits[1]._links.self.href
+       console.log("secondURL", tableArr[1])
+
+       tableArr[2] = response.hits[2]._links.self.href
+       console.log("thirdURL", tableArr[2])
+
+       tableArr[3] = response.hits[3]._links.self.href
+       console.log("fourthURL", tableArr[3])
+       return tableArr
+    })
     
 }
-/*
+
+
+//Ids for generating recipe content 
+var recipeLabelId = document.querySelector("#recipe_title")
+var recipeImageId = document.querySelector("#recipe_image")
+var recipeIngredientsId = document.querySelector("#recipe_ingredientlines")
+var recipeCaloriesId = document.querySelector("#recipe_calories")
+var recipeMinutesId = document.querySelector("#recipe_minutes")
+var recipeLinkId= document.querySelector("#recipe_link")
+
+function resetRecipe(){
+    recipeIngredientsId.textContent = ""
+}
+
+//function for getting the recipe url after button 0 click
+var tableArr = []
+
+//adding text content to html after button click 0
+function generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0){
+    favloc.setAttribute("data-target", recLabel0)
+    favloc.textContent = "Click to Favorite!"
+recipeLabelId.textContent = recLabel0
+recipeImageId.setAttribute("src", recipeImg0)
+/* var gList = recipeIngredientLines0[0]
+for (var j = 1; j < recipeIngredientLines0.length; j++){
+    gList = recipeIngredientLines0[j] + " "
+} */
+recipeIngredientsId.textContent = recipeIngredientLines0
+recipeCaloriesId.textContent = recipeCalories0 + " calories"
+if (recipeTotalTime0 === 0){
+    recipeMinutesId.textContent = "Less than one minute"
+}else{
+    recipeMinutesId.textContent = recipeTotalTime0 + " minutes"
+}
+
+recipeLinkId.textContent = "Learn More: " + btnURL0
+}
+
+function button0Call(){
+    var recipeURL = tableArr[0]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel0 = response.recipe.label
+        console.log("recipe content", recLabel0)
+        var recipeImg0 = response.recipe.images.REGULAR.url
+        console.log("recipe image 0", recipeImg0)
+        var recipeIngredientLines0 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines0)
+        var recipeCalories0 = response.recipe.calories
+        recipeCalories0 = Math.floor(recipeCalories0)
+        console.log(recipeCalories0)
+        var recipeTotalTime0 = response.recipe.totalTime 
+        console.log(recipeTotalTime0)
+        var btnURL0 = response.recipe.shareAs
+        console.log(btnURL0)
+        generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0)
+    })
+    
+}
+
+//target button 0
+var btn0Loc = document.querySelector("#btn0")
+btn0Loc.addEventListener("click", button0Call)
+
+
+//function for getting the recipe url after button 1 click
+var tableArr = []
+
+//adding text content to html after button click 1
+function generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1){
+    favloc.setAttribute("data-target", recLabel1)
+    favloc.textContent = "Click to Favorite!"
+    recipeLabelId.textContent = recLabel1
+    recipeImageId.setAttribute("src", recipeImg1)
+    /* for (var i = 0; i < recipeIngredientLines1.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines1[i] + " "
+    } */
+    recipeIngredientsId.textContent = recipeIngredientLines1
+    recipeCaloriesId.textContent = recipeCalories1 + " calories"
+    if (recipeTotalTime1 === 0){
+        recipeMinutesId.textContent = "Less than one minute"
+    } else{
+        recipeMinutesId.textContent = recipeTotalTime1 + " minutes"
+    }
+    
+    recipeLinkId.textContent = "Learn More: " + btnURL1
+    
+    }
+
+function button1Call(){
+    var recipeURL = tableArr[1]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel1 = response.recipe.label
+        console.log(recLabel1)
+        var recipeImg1 = response.recipe.images.REGULAR.url
+        console.log(recipeImg1)
+        var recipeIngredientLines1 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines1)
+        var recipeCalories1 = response.recipe.calories
+        recipeCalories1 = Math.floor(recipeCalories1)
+        console.log(recipeCalories1)
+        var recipeTotalTime1 = response.recipe.totalTime 
+        console.log(recipeTotalTime1)
+        var btnURL1 = response.recipe.shareAs
+        console.log(btnURL1)
+        generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1)
+    })
+    
+}
+//target button 1
+var btn1Loc = document.querySelector("#btn1")
+btn1Loc.addEventListener("click", button1Call)
+
+
+//function for getting the recipe url after button 2 click
+var tableArr = []
+
+//adding text content to html after button click 2
+function generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2){
+    favloc.setAttribute("data-target", recLabel2)
+    favloc.textContent = "Click to Favorite!"
+    recipeLabelId.textContent = recLabel2
+    recipeImageId.setAttribute("src", recipeImg2)
+    /* for (var i = 0; i < recipeIngredientLines2.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines2[i] + " "
+    } */
+
+    recipeIngredientsId.textContent = recipeIngredientLines2
+
+    recipeCaloriesId.textContent = recipeCalories2 + " calories"
+    if (recipeTotalTime2 === 0){
+        recipeMinutesId.textContent = "Less than one minute"
+    } else{
+        recipeMinutesId.textContent = recipeTotalTime2 + " minutes"
+    }
+    
+    recipeLinkId.textContent = "Learn More: " + recipeURL2
+    }
+
+
+function button2Call(){
+    var recipeURL = tableArr[2]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel2 = response.recipe.label
+        console.log("recipe content", recLabel2)
+        var recipeImg2 = response.recipe.images.REGULAR.url
+        console.log(recipeImg2)
+        var recipeIngredientLines2 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines2)
+        var recipeCalories2 = response.recipe.calories
+        recipeCalories2 = Math.floor(recipeCalories2)
+        console.log(recipeCalories2)
+        var recipeTotalTime2 = response.recipe.totalTime
+        console.log(recipeTotalTime2)
+        var recipeURL2 = response.recipe.shareAs
+        console.log(recipeURL2)
+        generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2)
+    })
+    
+}
+//target button 2
+var btn2Loc = document.querySelector("#btn2")
+btn2Loc.addEventListener("click", button2Call)
+
+
+//function for getting the recipe url after button 3 click
+var tableArr = []
+
+//adding text content to html after button click 3
+function generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3){
+    favloc.setAttribute("data-target", recLabel3)
+    favloc.textContent = "Click to Favorite!"
+    recipeLabelId.textContent = recLabel3
+    recipeImageId.setAttribute("src", recipeImg3)
+    /* for (var i = 0; i < recipeIngredientLines3.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines3[i] + " "
+    } */
+
+    recipeIngredientsId.textContent = recipeIngredientLines3
+
+    recipeCaloriesId.textContent = recipeCalories3 + " calories"
+    if (recipeTotalTime3 === 0){
+        recipeMinutesId.textContent = "Less than one minute"
+    }else{
+        recipeMinutesId.textContent = recipeTotalTime3 + " minutes"
+    }
+    
+    recipeLinkId.textContent = "Learn More: " + recipeURL3
+    }
+
+
+function button3Call(){
+    var recipeURL = tableArr[3]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel3 = response.recipe.label
+        console.log("recipe content", recLabel3)
+        var recipeImg3 = response.recipe.images.REGULAR.url
+        console.log(recipeImg3)
+        var recipeIngredientLines3 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines3)
+        var recipeCalories3 = response.recipe.calories
+        recipeCalories3 = Math.floor(recipeCalories3)
+        console.log(recipeCalories3)
+        var recipeTotalTime3 = response.recipe.totalTime 
+        console.log(recipeTotalTime3)
+        var recipeURL3 = response.recipe.shareAs
+        console.log(recipeURL3)
+        generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3)
+    })
+    
+}
+//target button 3
+var btn3Loc = document.querySelector("#btn3")
+btn3Loc.addEventListener("click", button3Call)
+
+
+
+
 function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage){
 
     head1.textContent = firstLabel
@@ -320,7 +596,7 @@ function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel
     img4.src = fourthImage
     
 }
-*/
+
 function apiCocktailCall(apiCocktailRandom){
     $.ajax({
         url: apiCocktailRandom,
@@ -436,21 +712,17 @@ function generateCocktail(drinkName, drinkImg, drinkCategory, drinkInstructions,
     
     
     cocCat.textContent = drinkCategory
+    var coctext = drinkIMA[0]
     
-    for (var i = 0; i < drinkIMA.length; i++){
-        var coctext = drinkIMA[0]
-
-        if (drinkIMA[i] !== 1){
-            coctext = coctext + ", " + drinkIMA[i] 
-        }else{
-            return;
-        }
+    for (var i = 1; i < drinkIMA.length; i++){
+        
+         coctext = coctext + ", " + drinkIMA[i] 
     }
     cocIMA.textContent = coctext
     cocHelp.textContent = drinkInstructions
     
 }
-
+var favP = document.querySelector("#favP")
 function cocktailReset(){
     cocHead.textContent = ""
     cocCat.textContent = ""
@@ -458,3 +730,27 @@ function cocktailReset(){
     cocHelp.textContent = ""
 }
 subBtn.addEventListener("click", getRecipes)
+
+var localFav = document.getElementById("localFav")
+favload();
+var favloc = document.querySelector("#FavBtn")
+function favload(){
+    var favMeals = localStorage.getItem("favMeals")
+    
+    var fav = JSON.parse(favMeals)
+    
+    favP.textContent = fav
+
+}
+
+function makeFav(event){
+    
+    var element = event.target
+    var favData = element.getAttribute("data-target")
+    favData = JSON.stringify(favData)
+    
+    localStorage.setItem("favMeals", favData)
+    favload();
+}
+
+favloc.addEventListener("click", makeFav)

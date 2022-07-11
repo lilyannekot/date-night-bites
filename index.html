@@ -108,14 +108,26 @@
                 <button type="submit" id="subBtn" class="button is-info is-rounded">Search</button>
             </div>
             <!-- Bottom of column for favorites -->
-            <div class="favorites">
-                <h2 id="favorites">Favorite Recipes</h2>
+            <div id ="localFav" class="favorites">
+                <h2 id="favorites">Favorite Recipe</h2>
+                <p id="favP"></p>
+
             </div>
         </div>
         <!-- Section for table and recipe to pop up -->
         <div class="column is-three-quarters">
             <div id = "table-container"></div>
             <div class = "recipe-content"></div>
+            <div id = "table-container"></div>
+            <div class = "recipe-content">
+                <h2 id="recipe_title"></h2>
+                <button type="button" id="FavBtn"></button>
+                <img id="recipe_image">
+                <p id="recipe_ingredientlines"></p>
+                <p id="recipe_calories"></p>
+                <p id="recipe_minutes"></p>
+                <p id="recipe_link"></p>
+            </div>
         </div>
     </div>
     <section class="row cocktails">
@@ -147,3 +159,6 @@
     <script src="Assets/script.js"></script>
 </body>
 </html>
+
+
+
