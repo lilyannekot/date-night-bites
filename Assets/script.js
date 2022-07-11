@@ -1,19 +1,19 @@
 
 //Table function
 var createTable = (row, col) => {
-    var tableBody = document.body;
-    var tableMain = document.createElement("table");
+    
+    var tableMain = document.createElement("table")
 
 //for loop to insert rows and columns
     for (i = 0; i < row; i++) {
-        var tblRow = tableMain.insertRow();
+        var tblRow = tableMain.insertRow()
         for (x = 0; x < col; x++) {
 
             //applying a unique id to the cells and class to rows
-            var rowName = "row" + i + x;
-            var cellName = "cell" + i + x;
-            var buttonName = "btn" + x;
-            // var tableTag = document.createElement("p")
+            var rowName = "row" + i + x
+            var cellName = "cell" + i + x
+            var buttonName = "btn" + x
+            
             var buttonPointer = document.createElement("button")
             var tblCell = tblRow.insertCell()
              if (i == 1) {
@@ -24,27 +24,24 @@ var createTable = (row, col) => {
             tblCell.style.border = "2px solid gray"
             tblCell.setAttribute("id", cellName)
             tblRow.setAttribute("class", rowName)
-            // var tableText = document.createTextNode("TEST TEXT")
-            // tableTag.appendChild(tableText)
             
+             
             
         }
     }
-    tableBody.appendChild(tableMain)
+    
+    for (y = 0; y < 3; y++){
+        var cellIdGen = "cell0" + y
+        var tableTagGen = document.getElementById(cellIdGen)
+             var tableTag = document.createElement("h2")
+            tableTag.textContent = ""
+            tableTagGen.appendChild(tableTag)
+    }
     document.getElementById("table-container").appendChild(tableMain)
-};
+}
 
 //amount of (rows, columns)
-createTable(2, 4);
-// use var buttonFunction for the "click" event listener
-//     object.addEventListener("click", buttonFunction)
-// var buttonFunction (){
-// }
-
-// head1.appendChild("cell00")
-// img1.appendChild("cell00")
-
-
+createTable(2, 4)
 
 
 // edamam app key and id key
@@ -324,6 +321,7 @@ function apiEdamamCall(apiEdamam){
 }
 
 
+//Ids for generating recipe content 
 var recipeLabelId = document.querySelector("#recipe_title")
 var recipeImageId = document.querySelector("#recipe_image")
 var recipeIngredientsId = document.querySelector("#recipe_ingredientlines")
