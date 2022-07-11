@@ -370,8 +370,13 @@ recipeImageId.setAttribute("src", recipeImg0)
 for (var i = 0; i < recipeIngredientLines0.length; i++){
 recipeIngredientsId.textContent = recipeIngredientLines0[i] + " "
 }
-recipeCaloriesId.textContent = recipeCalories0
-recipeMinutesId.textContent = recipeTotalTime0
+recipeCaloriesId.textContent = recipeCalories0 + " calories"
+if (recipeTotalTime0 === 0){
+    recipeMinutesId.textContent = "Less than one minute"
+}else{
+    recipeMinutesId.textContent = recipeTotalTime0 + " minutes"
+}
+
 recipeLinkId.textContent = btnURL0
 }
 
@@ -391,7 +396,7 @@ function button0Call(){
         var recipeCalories0 = response.recipe.calories
         recipeCalories0 = Math.floor(recipeCalories0)
         console.log(recipeCalories0)
-        var recipeTotalTime0 = response.recipe.totalTime + " minutes"
+        var recipeTotalTime0 = response.recipe.totalTime 
         console.log(recipeTotalTime0)
         var btnURL0 = response.recipe.shareAs
         console.log(btnURL0)
@@ -416,8 +421,13 @@ function generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalor
     for (var i = 0; i < recipeIngredientLines1.length; i++){
     recipeIngredientsId.textContent = recipeIngredientLines1[i] + " "
     }
-    recipeCaloriesId.textContent = recipeCalories1
-    recipeMinutesId.textContent = recipeTotalTime1
+    recipeCaloriesId.textContent = recipeCalories1 + " calories"
+    if (recipeTotalTime1 === 0){
+        recipeMinutesId.textContent = "Less than one minute"
+    } else{
+        recipeMinutesId.textContent = recipeTotalTime1 + " minutes"
+    }
+    
     recipeLinkId.textContent = btnURL1
     }
 
@@ -437,7 +447,7 @@ function button1Call(){
         var recipeCalories1 = response.recipe.calories
         recipeCalories1 = Math.floor(recipeCalories1)
         console.log(recipeCalories1)
-        var recipeTotalTime1 = response.recipe.totalTime + " minutes"
+        var recipeTotalTime1 = response.recipe.totalTime 
         console.log(recipeTotalTime1)
         var btnURL1 = response.recipe.shareAs
         console.log(btnURL1)
@@ -460,8 +470,13 @@ function generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalor
     for (var i = 0; i < recipeIngredientLines2.length; i++){
     recipeIngredientsId.textContent = recipeIngredientLines2[i] + " "
     }
-    recipeCaloriesId.textContent = recipeCalories2
-    recipeMinutesId.textContent = recipeTotalTime2
+    recipeCaloriesId.textContent = recipeCalories2 + " calories"
+    if (recipeTotalTime2 === 0){
+        recipeMinutesId.textContent = "Less than one minute"
+    } else{
+        recipeMinutesId.textContent = recipeTotalTime2 + " minutes"
+    }
+    
     recipeLinkId.textContent = recipeURL2
     }
 
@@ -482,7 +497,7 @@ function button2Call(){
         var recipeCalories2 = response.recipe.calories
         recipeCalories2 = Math.floor(recipeCalories2)
         console.log(recipeCalories2)
-        var recipeTotalTime2 = response.recipe.totalTime + " minutes"
+        var recipeTotalTime2 = response.recipe.totalTime
         console.log(recipeTotalTime2)
         var recipeURL2 = response.recipe.shareAs
         console.log(recipeURL2)
@@ -505,8 +520,13 @@ function generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalor
     for (var i = 0; i < recipeIngredientLines3.length; i++){
     recipeIngredientsId.textContent = recipeIngredientLines3[i] + " "
     }
-    recipeCaloriesId.textContent = recipeCalories3
-    recipeMinutesId.textContent = recipeTotalTime3
+    recipeCaloriesId.textContent = recipeCalories3 + " calories"
+    if (recipeTotalTime3 === 0){
+        recipeMinutesId.textContent = "Less than one minute"
+    }else{
+        recipeMinutesId.textContent = recipeTotalTime3 + " minutes"
+    }
+    
     recipeLinkId.textContent = recipeURL3
     }
 
@@ -527,7 +547,7 @@ function button3Call(){
         var recipeCalories3 = response.recipe.calories
         recipeCalories3 = Math.floor(recipeCalories3)
         console.log(recipeCalories3)
-        var recipeTotalTime3 = response.recipe.totalTime + " minutes"
+        var recipeTotalTime3 = response.recipe.totalTime 
         console.log(recipeTotalTime3)
         var recipeURL3 = response.recipe.shareAs
         console.log(recipeURL3)
