@@ -323,7 +323,7 @@ function apiEdamamCall(apiEdamam){
     
 }
 
-
+//function for getting the recipe url after button 0 click
 var tableArr = []
 
 function button0Call(){
@@ -335,14 +335,111 @@ function button0Call(){
     }).then(function (response){
         var recLabel0 = response.recipe.label
         console.log("recipe content", recLabel0)
-
+        var recipeImg0 = response.recipe.images.REGULAR.url
+        console.log("recipe image 0", recipeImg0)
+        var recipeIngredientLines0 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines0)
+        var recipeCalories0 = response.recipe.calories
+        console.log(recipeCalories0)
+        var recipeTotalTime0 = response.recipe.totalTime + " minutes"
+        console.log(recipeTotalTime0)
+        var recipeURL0 = response.recipe.shareAs
+        console.log(recipeURL0)
     })
-    
-
 }
-//target
+
+//target button 0
 var btn0Loc = document.querySelector("#btn0")
 btn0Loc.addEventListener("click", button0Call)
+
+
+
+//function for getting the recipe url after button 1 click
+var tableArr = []
+
+function button1Call(){
+    var recipeURL = tableArr[1]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel1 = response.recipe.label
+        console.log(recLabel1)
+        var recipeImg1 = response.recipe.images.REGULAR.url
+        console.log(recipeImg1)
+        var recipeIngredientLines1 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines1)
+        var recipeCalories1 = response.recipe.calories
+        console.log(recipeCalories1)
+        var recipeTotalTime1 = response.recipe.totalTime + " minutes"
+        console.log(recipeTotalTime1)
+        var recipeURL1 = response.recipe.shareAs
+        console.log(recipeURL1)
+    })
+}
+//target button 1
+var btn1Loc = document.querySelector("#btn1")
+btn1Loc.addEventListener("click", button1Call)
+
+
+//function for getting the recipe url after button 2 click
+var tableArr = []
+
+function button2Call(){
+    var recipeURL = tableArr[2]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel2 = response.recipe.label
+        console.log("recipe content", recLabel2)
+        var recipeImg2 = response.recipe.images.REGULAR.url
+        console.log(recipeImg2)
+        var recipeIngredientLines2 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines2)
+        var recipeCalories2 = response.recipe.ingredients.calories
+        console.log(recipeCalories2)
+        var recipeTotalTime2 = response.recipe.totalTime + " minutes"
+        console.log(recipeTotalTime2)
+        var recipeURL2 = response.recipe.shareAs
+        console.log(recipeURL2)
+    })
+}
+//target button 2
+var btn2Loc = document.querySelector("#btn2")
+btn2Loc.addEventListener("click", button2Call)
+
+
+//function for getting the recipe url after button 3 click
+var tableArr = []
+
+function button3Call(){
+    var recipeURL = tableArr[3]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel3 = response.recipe.label
+        console.log("recipe content", recLabel3)
+        var recipeImg3 = response.recipe.images.REGULAR.url
+        console.log(recipeImg3)
+        var recipeIngredientLines3 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines3)
+        var recipeCalories3 = response.recipe.calories
+        console.log(recipeCalories3)
+        var recipeTotalTime3 = response.recipe.totalTime + " minutes"
+        console.log(recipeTotalTime3)
+        var recipeURL3 = response.recipe.shareAs
+        console.log(recipeURL3)
+    })
+}
+//target button 3
+var btn3Loc = document.querySelector("#btn3")
+btn3Loc.addEventListener("click", button3Call)
+
 
 
 /*
