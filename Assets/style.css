@@ -95,13 +95,19 @@
 
 #cocktail-img {
     padding-top: 40px;
+    size: 25%;
 }
+
+.cocktail-par {
+    color: black;
+}
+
+/* Styling for footer */
 
 footer p {
     inline-size: 400px;
 }
 
-/* Styling for footer */
 footer a {
     display: block;
     color: var(--white);
@@ -176,15 +182,49 @@ table {
 
 /* For changes in viewport size */
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
    body {
-    width: 100%;
+        width: 100%;
    }
+   #cocktail-img {
+        width: 25%;
+}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     body {
-     width: 75%;
+        width: 100%;
+    }
+    .subtitle {
+        font-size: 25px;
+    }
+    .column-styling h2 {
+        font-size: 25px;
+    }
+    .column-styling h4 {
+        font-size: 20px;
+    }
+    .column-styling label {
+        font-size: 20px;
+    }
+    .favorites h2 {
+        font-size: 25px;
+    }
+    .cocktails h2 {
+        font-size: 25px;
+    }
+    .subscribe-cont {
+        text-align: center;
+    }
+    .logo-with-text {
+        align-items: center;
+        width: 85%;
+    }
+ }
+
+ @media screen and (min-width: 375px) {
+    body {
+     width: 100%;
     }
     .subtitle {
         font-size: 20px;
@@ -204,20 +244,17 @@ table {
     .cocktails h2 {
         font-size: 20px;
     }
-    #cocktail-img {
-        width: 50%;
+    .cocktail-par {
+        font-size: 15px;
     }
     .subscribe-cont {
         text-align: center;
     }
     .logo-with-text {
-        align-items: center;
         width: 75%;
+        margin: auto;
     }
- }
-
- @media screen and (max-width: 375px) {
-    body {
-     width: 25%;
+    .subscribe-cont {
+        padding-bottom: 75px;
     }
  }
