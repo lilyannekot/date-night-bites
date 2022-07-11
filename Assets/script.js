@@ -323,9 +323,31 @@ function apiEdamamCall(apiEdamam){
     
 }
 
+
+var recipeLabelId = document.querySelector("#recipe_title")
+var recipeImageId = document.querySelector("#recipe_image")
+var recipeIngredientsId = document.querySelector("#recipe_ingredientlines")
+var recipeCaloriesId = document.querySelector("#recipe_calories")
+var recipeMinutesId = document.querySelector("#recipe_minutes")
+var recipeLinkId= document.querySelector("#recipe_link")
+
+
+
 //function for getting the recipe url after button 0 click
 var tableArr = []
 
+function generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0){
+recipeLabelId.textContent = recLabel0
+recipeImageId.setAttribute("src", recipeImg0)
+for (var i = 0; i < recipeIngredientLines0.length; i++){
+recipeIngredientsId.textContent = recipeIngredientLines0[i] + " "
+}
+recipeCaloriesId.textContent = recipeCalories0
+recipeMinutesId.textContent = recipeTotalTime0
+recipeLinkId.textContent = btnURL0
+
+
+}
 function button0Call(){
     var recipeURL = tableArr[0]
     console.log(recipeURL)
@@ -340,12 +362,14 @@ function button0Call(){
         var recipeIngredientLines0 = response.recipe.ingredientLines
         console.log(recipeIngredientLines0)
         var recipeCalories0 = response.recipe.calories
+        recipeCalories0 = Math.floor(recipeCalories0)
         console.log(recipeCalories0)
         var recipeTotalTime0 = response.recipe.totalTime + " minutes"
         console.log(recipeTotalTime0)
-        var recipeURL0 = response.recipe.shareAs
-        console.log(recipeURL0)
+        var btnURL0 = response.recipe.shareAs
+        console.log(btnURL0)
     })
+    generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0)
 }
 
 //target button 0
@@ -371,6 +395,7 @@ function button1Call(){
         var recipeIngredientLines1 = response.recipe.ingredientLines
         console.log(recipeIngredientLines1)
         var recipeCalories1 = response.recipe.calories
+        recipeCalories1 = Math.floor(recipeCalories1)
         console.log(recipeCalories1)
         var recipeTotalTime1 = response.recipe.totalTime + " minutes"
         console.log(recipeTotalTime1)
@@ -399,7 +424,8 @@ function button2Call(){
         console.log(recipeImg2)
         var recipeIngredientLines2 = response.recipe.ingredientLines
         console.log(recipeIngredientLines2)
-        var recipeCalories2 = response.recipe.ingredients.calories
+        var recipeCalories2 = response.recipe.calories
+        recipeCalories2 = Math.floor(recipeCalories2)
         console.log(recipeCalories2)
         var recipeTotalTime2 = response.recipe.totalTime + " minutes"
         console.log(recipeTotalTime2)
@@ -429,6 +455,7 @@ function button3Call(){
         var recipeIngredientLines3 = response.recipe.ingredientLines
         console.log(recipeIngredientLines3)
         var recipeCalories3 = response.recipe.calories
+        recipeCalories3 = Math.floor(recipeCalories3)
         console.log(recipeCalories3)
         var recipeTotalTime3 = response.recipe.totalTime + " minutes"
         console.log(recipeTotalTime3)
