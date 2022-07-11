@@ -336,6 +336,7 @@ var recipeLinkId= document.querySelector("#recipe_link")
 //function for getting the recipe url after button 0 click
 var tableArr = []
 
+//adding text content to html after button click 0
 function generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0){
 recipeLabelId.textContent = recLabel0
 recipeImageId.setAttribute("src", recipeImg0)
@@ -345,9 +346,8 @@ recipeIngredientsId.textContent = recipeIngredientLines0[i] + " "
 recipeCaloriesId.textContent = recipeCalories0
 recipeMinutesId.textContent = recipeTotalTime0
 recipeLinkId.textContent = btnURL0
-
-
 }
+
 function button0Call(){
     var recipeURL = tableArr[0]
     console.log(recipeURL)
@@ -368,8 +368,9 @@ function button0Call(){
         console.log(recipeTotalTime0)
         var btnURL0 = response.recipe.shareAs
         console.log(btnURL0)
+        generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0)
     })
-    generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0)
+    
 }
 
 //target button 0
@@ -380,6 +381,18 @@ btn0Loc.addEventListener("click", button0Call)
 
 //function for getting the recipe url after button 1 click
 var tableArr = []
+
+//adding text content to html after button click 1
+function generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1){
+    recipeLabelId.textContent = recLabel1
+    recipeImageId.setAttribute("src", recipeImg1)
+    for (var i = 0; i < recipeIngredientLines1.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines1[i] + " "
+    }
+    recipeCaloriesId.textContent = recipeCalories1
+    recipeMinutesId.textContent = recipeTotalTime1
+    recipeLinkId.textContent = btnURL1
+    }
 
 function button1Call(){
     var recipeURL = tableArr[1]
@@ -399,9 +412,11 @@ function button1Call(){
         console.log(recipeCalories1)
         var recipeTotalTime1 = response.recipe.totalTime + " minutes"
         console.log(recipeTotalTime1)
-        var recipeURL1 = response.recipe.shareAs
-        console.log(recipeURL1)
+        var btnURL1 = response.recipe.shareAs
+        console.log(btnURL1)
+        generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1)
     })
+    
 }
 //target button 1
 var btn1Loc = document.querySelector("#btn1")
@@ -410,6 +425,19 @@ btn1Loc.addEventListener("click", button1Call)
 
 //function for getting the recipe url after button 2 click
 var tableArr = []
+
+//adding text content to html after button click 2
+function generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2){
+    recipeLabelId.textContent = recLabel2
+    recipeImageId.setAttribute("src", recipeImg2)
+    for (var i = 0; i < recipeIngredientLines2.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines2[i] + " "
+    }
+    recipeCaloriesId.textContent = recipeCalories2
+    recipeMinutesId.textContent = recipeTotalTime2
+    recipeLinkId.textContent = recipeURL2
+    }
+
 
 function button2Call(){
     var recipeURL = tableArr[2]
@@ -431,7 +459,9 @@ function button2Call(){
         console.log(recipeTotalTime2)
         var recipeURL2 = response.recipe.shareAs
         console.log(recipeURL2)
+        generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2)
     })
+    
 }
 //target button 2
 var btn2Loc = document.querySelector("#btn2")
@@ -440,6 +470,19 @@ btn2Loc.addEventListener("click", button2Call)
 
 //function for getting the recipe url after button 3 click
 var tableArr = []
+
+//adding text content to html after button click 3
+function generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3){
+    recipeLabelId.textContent = recLabel3
+    recipeImageId.setAttribute("src", recipeImg3)
+    for (var i = 0; i < recipeIngredientLines3.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines3[i] + " "
+    }
+    recipeCaloriesId.textContent = recipeCalories3
+    recipeMinutesId.textContent = recipeTotalTime3
+    recipeLinkId.textContent = recipeURL3
+    }
+
 
 function button3Call(){
     var recipeURL = tableArr[3]
@@ -461,7 +504,9 @@ function button3Call(){
         console.log(recipeTotalTime3)
         var recipeURL3 = response.recipe.shareAs
         console.log(recipeURL3)
+        generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3)
     })
+    
 }
 //target button 3
 var btn3Loc = document.querySelector("#btn3")
