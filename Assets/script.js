@@ -367,6 +367,8 @@ var tableArr = []
 
 //adding text content to html after button click 0
 function generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0){
+    favloc.setAttribute("data-target", recLabel0)
+    favloc.textContent = "Add to Favorites!"
 recipeLabelId.textContent = recLabel0
 recipeImageId.setAttribute("src", recipeImg0)
 /* var gList = recipeIngredientLines0[0]
@@ -419,6 +421,8 @@ var tableArr = []
 
 //adding text content to html after button click 1
 function generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1){
+    favloc.setAttribute("data-target", recLabel1)
+    favloc.textContent = "Add to Favorites!"
     recipeLabelId.textContent = recLabel1
     recipeImageId.setAttribute("src", recipeImg1)
     /* for (var i = 0; i < recipeIngredientLines1.length; i++){
@@ -470,6 +474,8 @@ var tableArr = []
 
 //adding text content to html after button click 2
 function generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2){
+    favloc.setAttribute("data-target", recLabel2)
+    favloc.textContent = "Add to Favorites!"
     recipeLabelId.textContent = recLabel2
     recipeImageId.setAttribute("src", recipeImg2)
     /* for (var i = 0; i < recipeIngredientLines2.length; i++){
@@ -523,6 +529,8 @@ var tableArr = []
 
 //adding text content to html after button click 3
 function generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3){
+    favloc.setAttribute("data-target", recLabel3)
+    favloc.textContent = "Add to Favorites!"
     recipeLabelId.textContent = recLabel3
     recipeImageId.setAttribute("src", recipeImg3)
     /* for (var i = 0; i < recipeIngredientLines3.length; i++){
@@ -724,34 +732,32 @@ function cocktailReset(){
 subBtn.addEventListener("click", getRecipes)
 
 
-/* 
+favload();
 var favloc = document.querySelector("#FavBtn")
 function favload(){
     var favMeals = localStorage.getItem("favMeals")
     if (favMeals === null){
         favMeals = []
-    }else {
-        favMeals = JSON.parse(favMeals)
     }
-    var favDiv = document.querySelector("#localFav")
     for (var i = 0; i < favMeals; i++){
         var localP = document.createElement("p")
         localP.textContent = favMeals[i]
-        favDiv.appendChild(localP)
+        favloc.appendChild(localP)
     }
 }
 
-function makeFav(){
+function makeFav(event){
     
-    var favData = event.target.data.value
+    var element = event.target
+    var favData = element.getAttribute("data-target")
     favData = JSON.stringify(favData)
-    var favMeals = localStorage.getItem("favMeals")
-    if (favMeals === null){
-        favMeals = []
+    
+    if (localStorage.getItem("favMeals") === null){
+        var favMeals = [favData]
     }else {
         favMeals[favMeals.length] = favData
     }
-    favMeals = JSON.stringify(favMeals)
-    localStorage.setItem("favoritesData", favMeals)
+    localStorage.setItem("favMeals", favMeals)
 }
-*/
+
+favloc.addEventListener("click", makeFav)
