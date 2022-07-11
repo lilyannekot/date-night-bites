@@ -83,13 +83,17 @@
     font-size: 25px;
     color: var(--content-font-color);
     padding-top: 15px;
-    padding-bottom: 300px;
+    padding-bottom: 200px;
     background-color: var(--filter-background-color);
 }
 
 .cocktails h2 {
     font-weight: bold;
     text-decoration: underline;
+}
+
+#cocktail-img {
+    padding-top: 40px;
 }
 
 footer p {
@@ -136,16 +140,13 @@ footer a {
     width: 350px;
 }
 
-<<<<<<< HEAD
 .slogan {
     color: var(--white);
 }
 
-/* table styling */
-table{
-    width: 100%;
-    
-
+/* Table styling */
+table {
+    width: 95%;
 }
 .row03{
     height: 150px;
@@ -157,11 +158,14 @@ table{
 }
 
 .row13 button{
-    width: 50%;
+    width: 35%;
     color: var(--white);
     background-color: #3e8ed0;
     border: none;
     border-radius: 50%;
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
 }
 
 .row13 button:hover{
@@ -171,8 +175,6 @@ table{
 #btn1{
     align-content: center;
 }
-
-=======
 
 /* For changes in viewport size */
 
@@ -221,4 +223,3 @@ table{
      width: 25%;
     }
  }
->>>>>>> 13e60d54490af6bf9c39321f77f9916add509a38
