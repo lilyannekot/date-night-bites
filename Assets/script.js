@@ -306,26 +306,45 @@ function apiEdamamCall(apiEdamam){
 
 
        //table url variable array
-       var tableArr = []
+       tableArr = []
        tableArr[0] = response.hits[0]._links.self.href
-       console.log("firstURL", firstURL)
+       console.log("firstURL", tableArr[0])
 
        tableArr[1] = response.hits[1]._links.self.href
-       console.log("secondURL", secondURL)
+       console.log("secondURL", tableArr[1])
 
        tableArr[2] = response.hits[2]._links.self.href
-       console.log("thirdURL", thirdURL)
+       console.log("thirdURL", tableArr[2])
 
        tableArr[3] = response.hits[3]._links.self.href
-       console.log("fourthURL", fourthURL)
-
-       
-
+       console.log("fourthURL", tableArr[3])
+       return tableArr
     })
-
-    return tableArr
     
 }
+
+
+var tableArr = []
+
+function button0Call(){
+    var recipeURL = tableArr[0]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel0 = response.recipe.label
+        console.log("recipe content", recLabel0)
+
+    })
+    
+
+}
+//target
+var btn0Loc = document.querySelector("#btn0")
+btn0Loc.addEventListener("click", button0Call)
+
+
 /*
 function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage){
 
