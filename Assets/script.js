@@ -2,8 +2,8 @@
 //Table function
 var createTable = (row, col) => {
     
+    var tableBody = document.body
     var tableMain = document.createElement("table")
-
 //for loop to insert rows and columns
     for (i = 0; i < row; i++) {
         var tblRow = tableMain.insertRow()
@@ -24,20 +24,59 @@ var createTable = (row, col) => {
             tblCell.style.border = "2px solid gray"
             tblCell.setAttribute("id", cellName)
             tblRow.setAttribute("class", rowName)
-            
+
+            tableBody.appendChild(tableMain)
+            document.getElementById("table-container").appendChild(tableMain)
              
             
         }
     }
     
-    for (y = 0; y < 3; y++){
-        var cellIdGen = "cell0" + y
-        var tableTagGen = document.getElementById(cellIdGen)
-             var tableTag = document.createElement("h2")
-            tableTag.textContent = ""
-            tableTagGen.appendChild(tableTag)
-    }
-    document.getElementById("table-container").appendChild(tableMain)
+    
+    createTableTags();
+}
+
+function createTableTags(){
+    var cell1 = document.querySelector("#cell00")
+    var cell2 = document.querySelector("#cell01")
+    var cell3 = document.querySelector("#cell02")
+    var cell4 = document.querySelector("#cell03")
+
+    var cellHead = document.createElement("h2")
+    cellHead.textContent = ""
+    cellHead.setAttribute("id", "cell1-head")
+    cell1.appendChild(cellHead)
+    var cellImg = document.createElement("img")
+    cellImg.setAttribute("id", "cell1-img")
+    cellImg.setAttribute("src", "")
+    cell1.appendChild(cellImg)
+
+    var cellHead2 = document.createElement("h2")
+    cellHead2.textContent = ""
+    cellHead2.setAttribute("id", "cell2-head")
+    cell2.appendChild(cellHead2)
+    var cellImg2 = document.createElement("img")
+    cellImg2.setAttribute("id", "cell2-img")
+    cellImg2.setAttribute("src", "")
+    cell2.appendChild(cellImg2)
+
+    var cellHead3 = document.createElement("h2")
+    cellHead3.textContent = ""
+    cellHead3.setAttribute("id", "cell3-head")
+    cell3.appendChild(cellHead3)
+    var cellImg3 = document.createElement("img")
+    cellImg3.setAttribute("id", "cell3-img")
+    cellImg3.setAttribute("src", "")
+    cell3.appendChild(cellImg3)
+
+    var cellHead4 = document.createElement("h2")
+    cellHead4.textContent = ""
+    cellHead4.setAttribute("id", "cell4-head")
+    cell4.appendChild(cellHead4)
+    var cellImg4 = document.createElement("img")
+    cellImg4.setAttribute("id", "cell4-img")
+    cellImg4.setAttribute("src", "")
+    cell4.appendChild(cellImg4)
 }
 
 //amount of (rows, columns)
