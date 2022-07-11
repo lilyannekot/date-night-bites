@@ -1,20 +1,19 @@
 
-<<<<<<< HEAD
 //Table function
 var createTable = (row, col) => {
-    var tableBody = document.body;
-    var tableMain = document.createElement("table");
+    
+    var tableMain = document.createElement("table")
 
 //for loop to insert rows and columns
     for (i = 0; i < row; i++) {
-        var tblRow = tableMain.insertRow();
+        var tblRow = tableMain.insertRow()
         for (x = 0; x < col; x++) {
 
             //applying a unique id to the cells and class to rows
-            var rowName = "row" + i + x;
-            var cellName = "cell" + i + x;
-            var buttonName = "btn" + x;
-            // var tableTag = document.createElement("p")
+            var rowName = "row" + i + x
+            var cellName = "cell" + i + x
+            var buttonName = "btn" + x
+            
             var buttonPointer = document.createElement("button")
             var tblCell = tblRow.insertCell()
              if (i == 1) {
@@ -25,31 +24,26 @@ var createTable = (row, col) => {
             tblCell.style.border = "2px solid gray"
             tblCell.setAttribute("id", cellName)
             tblRow.setAttribute("class", rowName)
-            // var tableText = document.createTextNode("TEST TEXT")
-            // tableTag.appendChild(tableText)
             
+             
             
         }
     }
-    tableBody.appendChild(tableMain)
+    
+    for (y = 0; y < 3; y++){
+        var cellIdGen = "cell0" + y
+        var tableTagGen = document.getElementById(cellIdGen)
+             var tableTag = document.createElement("h2")
+            tableTag.textContent = ""
+            tableTagGen.appendChild(tableTag)
+    }
     document.getElementById("table-container").appendChild(tableMain)
-};
+}
 
 //amount of (rows, columns)
-createTable(2, 4);
-// use var buttonFunction for the "click" event listener
-//     object.addEventListener("click", buttonFunction)
-// var buttonFunction (){
-// }
-
-// head1.appendChild("cell00")
-// img1.appendChild("cell00")
+createTable(2, 4)
 
 
-
-
-=======
->>>>>>> 13e60d54490af6bf9c39321f77f9916add509a38
 // edamam app key and id key
 var edamam_app_key = "&app_key=2658fb427c224a591a4dd3e5d4db9160"
 var edemam_app_id = "&app_id=8426c0e6"
@@ -241,9 +235,12 @@ function getRecipes(event){
 
 Need to add <img tags> inside table for validator when table is added
 
-
-
 */
+
+
+
+
+
 
 function apiEdamamCall(apiEdamam){
 
@@ -302,11 +299,219 @@ function apiEdamamCall(apiEdamam){
         console.log("4th img",fourthImage)
 
        // placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage);
-    })
 
-    
+
+
+       //table url variable array
+       tableArr = []
+       tableArr[0] = response.hits[0]._links.self.href
+       console.log("firstURL", tableArr[0])
+
+       tableArr[1] = response.hits[1]._links.self.href
+       console.log("secondURL", tableArr[1])
+
+       tableArr[2] = response.hits[2]._links.self.href
+       console.log("thirdURL", tableArr[2])
+
+       tableArr[3] = response.hits[3]._links.self.href
+       console.log("fourthURL", tableArr[3])
+       return tableArr
+    })
     
 }
+
+
+//Ids for generating recipe content 
+var recipeLabelId = document.querySelector("#recipe_title")
+var recipeImageId = document.querySelector("#recipe_image")
+var recipeIngredientsId = document.querySelector("#recipe_ingredientlines")
+var recipeCaloriesId = document.querySelector("#recipe_calories")
+var recipeMinutesId = document.querySelector("#recipe_minutes")
+var recipeLinkId= document.querySelector("#recipe_link")
+
+
+
+//function for getting the recipe url after button 0 click
+var tableArr = []
+
+//adding text content to html after button click 0
+function generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0){
+recipeLabelId.textContent = recLabel0
+recipeImageId.setAttribute("src", recipeImg0)
+for (var i = 0; i < recipeIngredientLines0.length; i++){
+recipeIngredientsId.textContent = recipeIngredientLines0[i] + " "
+}
+recipeCaloriesId.textContent = recipeCalories0
+recipeMinutesId.textContent = recipeTotalTime0
+recipeLinkId.textContent = btnURL0
+}
+
+function button0Call(){
+    var recipeURL = tableArr[0]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel0 = response.recipe.label
+        console.log("recipe content", recLabel0)
+        var recipeImg0 = response.recipe.images.REGULAR.url
+        console.log("recipe image 0", recipeImg0)
+        var recipeIngredientLines0 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines0)
+        var recipeCalories0 = response.recipe.calories
+        recipeCalories0 = Math.floor(recipeCalories0)
+        console.log(recipeCalories0)
+        var recipeTotalTime0 = response.recipe.totalTime + " minutes"
+        console.log(recipeTotalTime0)
+        var btnURL0 = response.recipe.shareAs
+        console.log(btnURL0)
+        generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0)
+    })
+    
+}
+
+//target button 0
+var btn0Loc = document.querySelector("#btn0")
+btn0Loc.addEventListener("click", button0Call)
+
+
+
+//function for getting the recipe url after button 1 click
+var tableArr = []
+
+//adding text content to html after button click 1
+function generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1){
+    recipeLabelId.textContent = recLabel1
+    recipeImageId.setAttribute("src", recipeImg1)
+    for (var i = 0; i < recipeIngredientLines1.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines1[i] + " "
+    }
+    recipeCaloriesId.textContent = recipeCalories1
+    recipeMinutesId.textContent = recipeTotalTime1
+    recipeLinkId.textContent = btnURL1
+    }
+
+function button1Call(){
+    var recipeURL = tableArr[1]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel1 = response.recipe.label
+        console.log(recLabel1)
+        var recipeImg1 = response.recipe.images.REGULAR.url
+        console.log(recipeImg1)
+        var recipeIngredientLines1 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines1)
+        var recipeCalories1 = response.recipe.calories
+        recipeCalories1 = Math.floor(recipeCalories1)
+        console.log(recipeCalories1)
+        var recipeTotalTime1 = response.recipe.totalTime + " minutes"
+        console.log(recipeTotalTime1)
+        var btnURL1 = response.recipe.shareAs
+        console.log(btnURL1)
+        generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1)
+    })
+    
+}
+//target button 1
+var btn1Loc = document.querySelector("#btn1")
+btn1Loc.addEventListener("click", button1Call)
+
+
+//function for getting the recipe url after button 2 click
+var tableArr = []
+
+//adding text content to html after button click 2
+function generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2){
+    recipeLabelId.textContent = recLabel2
+    recipeImageId.setAttribute("src", recipeImg2)
+    for (var i = 0; i < recipeIngredientLines2.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines2[i] + " "
+    }
+    recipeCaloriesId.textContent = recipeCalories2
+    recipeMinutesId.textContent = recipeTotalTime2
+    recipeLinkId.textContent = recipeURL2
+    }
+
+
+function button2Call(){
+    var recipeURL = tableArr[2]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel2 = response.recipe.label
+        console.log("recipe content", recLabel2)
+        var recipeImg2 = response.recipe.images.REGULAR.url
+        console.log(recipeImg2)
+        var recipeIngredientLines2 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines2)
+        var recipeCalories2 = response.recipe.calories
+        recipeCalories2 = Math.floor(recipeCalories2)
+        console.log(recipeCalories2)
+        var recipeTotalTime2 = response.recipe.totalTime + " minutes"
+        console.log(recipeTotalTime2)
+        var recipeURL2 = response.recipe.shareAs
+        console.log(recipeURL2)
+        generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2)
+    })
+    
+}
+//target button 2
+var btn2Loc = document.querySelector("#btn2")
+btn2Loc.addEventListener("click", button2Call)
+
+
+//function for getting the recipe url after button 3 click
+var tableArr = []
+
+//adding text content to html after button click 3
+function generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3){
+    recipeLabelId.textContent = recLabel3
+    recipeImageId.setAttribute("src", recipeImg3)
+    for (var i = 0; i < recipeIngredientLines3.length; i++){
+    recipeIngredientsId.textContent = recipeIngredientLines3[i] + " "
+    }
+    recipeCaloriesId.textContent = recipeCalories3
+    recipeMinutesId.textContent = recipeTotalTime3
+    recipeLinkId.textContent = recipeURL3
+    }
+
+
+function button3Call(){
+    var recipeURL = tableArr[3]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel3 = response.recipe.label
+        console.log("recipe content", recLabel3)
+        var recipeImg3 = response.recipe.images.REGULAR.url
+        console.log(recipeImg3)
+        var recipeIngredientLines3 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines3)
+        var recipeCalories3 = response.recipe.calories
+        recipeCalories3 = Math.floor(recipeCalories3)
+        console.log(recipeCalories3)
+        var recipeTotalTime3 = response.recipe.totalTime + " minutes"
+        console.log(recipeTotalTime3)
+        var recipeURL3 = response.recipe.shareAs
+        console.log(recipeURL3)
+        generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3)
+    })
+    
+}
+//target button 3
+var btn3Loc = document.querySelector("#btn3")
+btn3Loc.addEventListener("click", button3Call)
+
+
+
 /*
 function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage){
 
