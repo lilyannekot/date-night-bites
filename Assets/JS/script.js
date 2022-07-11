@@ -1,3 +1,5 @@
+var todayDate = moment().format('dddd, MMM Do YYYY');
+$("#todayDate").html(todayDate);
 
 //Table function
 var createTable = (row, col) => {
@@ -27,11 +29,8 @@ var createTable = (row, col) => {
 
             tableBody.appendChild(tableMain)
             document.getElementById("table-container").appendChild(tableMain)
-             
-            
         }
     }
-    
     
     createTableTags();
 }
@@ -81,7 +80,6 @@ function createTableTags(){
 
 //amount of (rows, columns)
 createTable(2, 4)
-
 
 // edamam app key and id key
 var edamam_app_key = "&app_key=2658fb427c224a591a4dd3e5d4db9160"
@@ -134,7 +132,6 @@ var img4 = document.querySelector("#cell4-img")
 
 var cocktailImage = document.querySelector("#cocktail-img")
 
-
 var cocHead = document.querySelector("#divHead")
 var cocCat = document.querySelector("#one")
 var cocIMA = document.querySelector("#two")
@@ -156,8 +153,6 @@ filter types
 &mealType=[breakfast, lunch, dinner] arraystring
 
 */
-
-
 
 function getRecipes(event){
 
@@ -268,9 +263,6 @@ function getRecipes(event){
     
 }
 
-
-
-
 function apiEdamamCall(apiEdamam){
 
     $.ajax({
@@ -296,6 +288,7 @@ function apiEdamamCall(apiEdamam){
             head4.textContent = "No recipes for that selection"
             img4.src = noFood
         }
+
     // grabbing the first recipe name
         var firstLabel = response.hits[0].recipe.label
     // grabbing the first recipe image
@@ -330,7 +323,6 @@ function apiEdamamCall(apiEdamam){
         placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage);
 
 
-
        //table url variable array
        tableArr = []
        tableArr[0] = response.hits[0]._links.self.href
@@ -348,7 +340,6 @@ function apiEdamamCall(apiEdamam){
     })
     
 }
-
 
 //Ids for generating recipe content 
 var recipeLabelId = document.querySelector("#recipe_title")
@@ -754,3 +745,22 @@ function makeFav(event){
 }
 
 favloc.addEventListener("click", makeFav)
+
+// Local storage for subscribe button
+var subscribeInput = document.getElementById("subscribe")
+var subscribeBtn = document.getElementById("subscribe-btn")
+
+function subscribeEmail(event){
+
+    var subscribe = event.target
+    var email = subscribe.getAttribute("data-target", subscribeInput)
+    email = JSON.stringify(email)
+
+    localStorage.setItem("input", email)
+    subscribeEmail();
+}
+
+subscribeBtn.addEventListener("click", subscribeEmail)
+
+
+
