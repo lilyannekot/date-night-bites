@@ -368,7 +368,7 @@ var tableArr = []
 //adding text content to html after button click 0
 function generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0){
     favloc.setAttribute("data-target", recLabel0)
-    favloc.textContent = "Add to Favorites!"
+    favloc.textContent = "Click to Favorite!"
 recipeLabelId.textContent = recLabel0
 recipeImageId.setAttribute("src", recipeImg0)
 /* var gList = recipeIngredientLines0[0]
@@ -422,7 +422,7 @@ var tableArr = []
 //adding text content to html after button click 1
 function generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1){
     favloc.setAttribute("data-target", recLabel1)
-    favloc.textContent = "Add to Favorites!"
+    favloc.textContent = "Click to Favorite!"
     recipeLabelId.textContent = recLabel1
     recipeImageId.setAttribute("src", recipeImg1)
     /* for (var i = 0; i < recipeIngredientLines1.length; i++){
@@ -475,7 +475,7 @@ var tableArr = []
 //adding text content to html after button click 2
 function generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2){
     favloc.setAttribute("data-target", recLabel2)
-    favloc.textContent = "Add to Favorites!"
+    favloc.textContent = "Click to Favorite!"
     recipeLabelId.textContent = recLabel2
     recipeImageId.setAttribute("src", recipeImg2)
     /* for (var i = 0; i < recipeIngredientLines2.length; i++){
@@ -530,7 +530,7 @@ var tableArr = []
 //adding text content to html after button click 3
 function generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3){
     favloc.setAttribute("data-target", recLabel3)
-    favloc.textContent = "Add to Favorites!"
+    favloc.textContent = "Click to Favorite!"
     recipeLabelId.textContent = recLabel3
     recipeImageId.setAttribute("src", recipeImg3)
     /* for (var i = 0; i < recipeIngredientLines3.length; i++){
@@ -722,7 +722,7 @@ function generateCocktail(drinkName, drinkImg, drinkCategory, drinkInstructions,
     cocHelp.textContent = drinkInstructions
     
 }
-
+var favP = document.querySelector("#favP")
 function cocktailReset(){
     cocHead.textContent = ""
     cocCat.textContent = ""
@@ -738,9 +738,8 @@ function favload(){
     var favMeals = localStorage.getItem("favMeals")
     
     var fav = JSON.parse(favMeals)
-    var newFav = document.createElement("p")
-    newFav.textContent = fav
-    localFav.appendChild(newFav)
+    
+    favP.textContent = fav
 
 }
 
@@ -751,6 +750,7 @@ function makeFav(event){
     favData = JSON.stringify(favData)
     
     localStorage.setItem("favMeals", favData)
+    favload();
 }
 
 favloc.addEventListener("click", makeFav)
