@@ -731,19 +731,17 @@ function cocktailReset(){
 }
 subBtn.addEventListener("click", getRecipes)
 
-
+var localFav = document.getElementById("localFav")
 favload();
 var favloc = document.querySelector("#FavBtn")
 function favload(){
     var favMeals = localStorage.getItem("favMeals")
-    if (favMeals === null){
-        favMeals = []
-    }
-    for (var i = 0; i < favMeals; i++){
-        var localP = document.createElement("p")
-        localP.textContent = favMeals[i]
-        favloc.appendChild(localP)
-    }
+    
+    var fav = JSON.parse(favMeals)
+    var newFav = document.createElement("p")
+    newFav.textContent = fav
+    localFav.appendChild(newFav)
+
 }
 
 function makeFav(event){
@@ -752,12 +750,7 @@ function makeFav(event){
     var favData = element.getAttribute("data-target")
     favData = JSON.stringify(favData)
     
-    if (localStorage.getItem("favMeals") === null){
-        var favMeals = [favData]
-    }else {
-        favMeals[favMeals.length] = favData
-    }
-    localStorage.setItem("favMeals", favMeals)
+    localStorage.setItem("favMeals", favData)
 }
 
 favloc.addEventListener("click", makeFav)
