@@ -358,7 +358,9 @@ var recipeCaloriesId = document.querySelector("#recipe_calories")
 var recipeMinutesId = document.querySelector("#recipe_minutes")
 var recipeLinkId= document.querySelector("#recipe_link")
 
-
+function resetRecipe(){
+    recipeIngredientsId.textContent = ""
+}
 
 //function for getting the recipe url after button 0 click
 var tableArr = []
@@ -367,9 +369,11 @@ var tableArr = []
 function generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0){
 recipeLabelId.textContent = recLabel0
 recipeImageId.setAttribute("src", recipeImg0)
-for (var i = 0; i < recipeIngredientLines0.length; i++){
-recipeIngredientsId.textContent = recipeIngredientLines0[i] + " "
-}
+/* var gList = recipeIngredientLines0[0]
+for (var j = 1; j < recipeIngredientLines0.length; j++){
+    gList = recipeIngredientLines0[j] + " "
+} */
+recipeIngredientsId.textContent = recipeIngredientLines0
 recipeCaloriesId.textContent = recipeCalories0 + " calories"
 if (recipeTotalTime0 === 0){
     recipeMinutesId.textContent = "Less than one minute"
@@ -377,7 +381,7 @@ if (recipeTotalTime0 === 0){
     recipeMinutesId.textContent = recipeTotalTime0 + " minutes"
 }
 
-recipeLinkId.textContent = btnURL0
+recipeLinkId.textContent = "Learn More: " + btnURL0
 }
 
 function button0Call(){
@@ -410,7 +414,6 @@ var btn0Loc = document.querySelector("#btn0")
 btn0Loc.addEventListener("click", button0Call)
 
 
-
 //function for getting the recipe url after button 1 click
 var tableArr = []
 
@@ -418,9 +421,10 @@ var tableArr = []
 function generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalories1, recipeTotalTime1, btnURL1){
     recipeLabelId.textContent = recLabel1
     recipeImageId.setAttribute("src", recipeImg1)
-    for (var i = 0; i < recipeIngredientLines1.length; i++){
+    /* for (var i = 0; i < recipeIngredientLines1.length; i++){
     recipeIngredientsId.textContent = recipeIngredientLines1[i] + " "
-    }
+    } */
+    recipeIngredientsId.textContent = recipeIngredientLines1
     recipeCaloriesId.textContent = recipeCalories1 + " calories"
     if (recipeTotalTime1 === 0){
         recipeMinutesId.textContent = "Less than one minute"
@@ -428,7 +432,8 @@ function generateBtn1(recLabel1, recipeImg1, recipeIngredientLines1, recipeCalor
         recipeMinutesId.textContent = recipeTotalTime1 + " minutes"
     }
     
-    recipeLinkId.textContent = btnURL1
+    recipeLinkId.textContent = "Learn More: " + btnURL1
+    
     }
 
 function button1Call(){
@@ -467,9 +472,12 @@ var tableArr = []
 function generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalories2, recipeTotalTime2, recipeURL2){
     recipeLabelId.textContent = recLabel2
     recipeImageId.setAttribute("src", recipeImg2)
-    for (var i = 0; i < recipeIngredientLines2.length; i++){
+    /* for (var i = 0; i < recipeIngredientLines2.length; i++){
     recipeIngredientsId.textContent = recipeIngredientLines2[i] + " "
-    }
+    } */
+
+    recipeIngredientsId.textContent = recipeIngredientLines2
+
     recipeCaloriesId.textContent = recipeCalories2 + " calories"
     if (recipeTotalTime2 === 0){
         recipeMinutesId.textContent = "Less than one minute"
@@ -477,7 +485,7 @@ function generateBtn2(recLabel2, recipeImg2, recipeIngredientLines2, recipeCalor
         recipeMinutesId.textContent = recipeTotalTime2 + " minutes"
     }
     
-    recipeLinkId.textContent = recipeURL2
+    recipeLinkId.textContent = "Learn More: " + recipeURL2
     }
 
 
@@ -517,9 +525,12 @@ var tableArr = []
 function generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalories3, recipeTotalTime3, recipeURL3){
     recipeLabelId.textContent = recLabel3
     recipeImageId.setAttribute("src", recipeImg3)
-    for (var i = 0; i < recipeIngredientLines3.length; i++){
+    /* for (var i = 0; i < recipeIngredientLines3.length; i++){
     recipeIngredientsId.textContent = recipeIngredientLines3[i] + " "
-    }
+    } */
+
+    recipeIngredientsId.textContent = recipeIngredientLines3
+
     recipeCaloriesId.textContent = recipeCalories3 + " calories"
     if (recipeTotalTime3 === 0){
         recipeMinutesId.textContent = "Less than one minute"
@@ -527,7 +538,7 @@ function generateBtn2(recLabel3, recipeImg3, recipeIngredientLines3, recipeCalor
         recipeMinutesId.textContent = recipeTotalTime3 + " minutes"
     }
     
-    recipeLinkId.textContent = recipeURL3
+    recipeLinkId.textContent = "Learn More: " + recipeURL3
     }
 
 
