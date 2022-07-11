@@ -66,6 +66,7 @@
     color: var(--content-font-color);
     background-color: var(--filter-background-color);
     text-align: center;
+    padding-bottom: 30%;
 }
 
 .favorites h2 {
@@ -74,7 +75,7 @@
     text-decoration: underline;
     font-weight: bold;
     padding-top: 10px;
-    padding-bottom: 50%;
+    
 }
 
 /* For styling cocktails in bottom row above footer */
@@ -83,7 +84,7 @@
     font-size: 25px;
     color: var(--content-font-color);
     padding-top: 15px;
-    padding-bottom: 300px;
+    padding-bottom: 150px;
     background-color: var(--filter-background-color);
 }
 
