@@ -93,6 +93,10 @@
     text-decoration: underline;
 }
 
+#cocktail-img {
+    padding-top: 40px;
+}
+
 footer p {
     inline-size: 400px;
 }
@@ -141,11 +145,9 @@ footer a {
     color: var(--white);
 }
 
-/* table styling */
-table{
-    width: 100%;
-    
-
+/* Table styling */
+table {
+    width: 95%;
 }
 .row03{
     height: 150px;
@@ -157,21 +159,20 @@ table{
 }
 
 .row13 button{
-    width: 50%;
+    width: 35%;
     color: var(--white);
     background-color: #3e8ed0;
     border: none;
     border-radius: 50%;
     display: block;
-    margin: auto;
+    margin: 5px auto;
+    padding: 10px;
 }
 
 .row13 button:hover{
     background-color: rgb(35, 116, 182);
     border: none;
 }
-
-
 
 /* For changes in viewport size */
 

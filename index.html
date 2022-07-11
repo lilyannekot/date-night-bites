@@ -19,9 +19,10 @@
     <nav class="navbar" role="navigation">
         <div class="navbar-menu is-active">
             <div class="navbar-end">
-                <a class="navbar-item">Home</a>
+                <a href="#top-of-page" class="navbar-item">Home</a>
+                <a href="#favorites" class="navbar-item">Favorites</a>
                 <a href="#cocktails" class="navbar-item">Cocktails</a>
-                <a class="navbar-item">About</a>
+                <a href="#search" class="navbar-item">Recipes</a>
             </div>
         </div>
     </nav>
@@ -49,7 +50,7 @@
                 <input type="text" class="input is-info is-small is-hovered is-rounded" id="search-bar" placeholder="Search...">
                 <h4>Health</h4>
                 <label for="vegetarian" class="checkbox">
-                    <input id="vegetarian" name="vegetarian"type="checkbox">
+                    <input id="vegetarian" name="vegetarian" type="checkbox">
                     Vegetarian
                 </label>
                 <label for="vegan" class="checkbox">
@@ -115,12 +116,10 @@
         </div>
         <!-- Section for table and recipe to pop up -->
         <div class="column is-three-quarters">
-            <div id = "table-container">
-                
-            </div>
-            
+            <div id = "table-container"></div>
+            <div class = "recipe-content"></div>
+            <div id = "table-container"></div>
             <div class = "recipe-content">
-            
                 <h2 id="recipe_title"></h2>
                 <button type="button" id="FavBtn"></button>
                 <img id="recipe_image">
@@ -128,10 +127,7 @@
                 <p id="recipe_calories"></p>
                 <p id="recipe_minutes"></p>
                 <p id="recipe_link"></p>
-
             </div>
-            
-
         </div>
     </div>
     <section class="row cocktails">
@@ -153,9 +149,10 @@
             <a href="#search">Find More Recipes</a>
         </div>
         <br>
-        <div class="field column subscribe-cont">
+        <div class="column subscribe-cont">
             <label class="label subscribe-name">Subscribe</label>
             <input class="input is-rounded subscribe" placeholder="Email">
+            <button class="button is-rounded">Submit</button>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
