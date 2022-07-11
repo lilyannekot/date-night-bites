@@ -118,17 +118,17 @@ var searchBar = document.querySelector("#search-bar")
 //-------------------------------------------------------------------------
 //Table Ids for content to be added 
 
-var head1 = document.querySelector("#head1")
-var img1 = document.querySelector("#img1")
+var head1 = document.querySelector("#cell1-head")
+var img1 = document.querySelector("#cell1-img")
 
-var head2 = document.querySelector("#head2")
-var img2 = document.querySelector("#img2")
+var head2 = document.querySelector("#cell2-head")
+var img2 = document.querySelector("#cell2-img")
 
-var head3 = document.querySelector("#head3")
-var img3 = document.querySelector("#img3")
+var head3 = document.querySelector("#cell3-head")
+var img3 = document.querySelector("#cell3-img")
 
-var head4 = document.querySelector("#head4")
-var img4 = document.querySelector("#img4")
+var head4 = document.querySelector("#cell4-head")
+var img4 = document.querySelector("#cell4-img")
 //-------------------------------------------------------------------------
 // Cocktail div Ids
 
@@ -267,16 +267,6 @@ function getRecipes(event){
     apiEdamamCall(apiEdamam);
     
 }
-/*
-
-
-
-
-Need to add <img tags> inside table for validator when table is added
-
-*/
-
-
 
 
 
@@ -337,7 +327,7 @@ function apiEdamamCall(apiEdamam){
         console.log("4th label",fourthLabel)
         console.log("4th img",fourthImage)
 
-       // placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage);
+        placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage);
 
 
 
@@ -551,7 +541,7 @@ btn3Loc.addEventListener("click", button3Call)
 
 
 
-/*
+
 function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel, thirdImage, fourthLabel, fourthImage){
 
     head1.textContent = firstLabel
@@ -567,7 +557,7 @@ function placeTableData(firstLabel, firstImg, secondLabel, secondImg, thirdLabel
     img4.src = fourthImage
     
 }
-*/
+
 function apiCocktailCall(apiCocktailRandom){
     $.ajax({
         url: apiCocktailRandom,
@@ -683,15 +673,11 @@ function generateCocktail(drinkName, drinkImg, drinkCategory, drinkInstructions,
     
     
     cocCat.textContent = drinkCategory
+    var coctext = drinkIMA[0]
     
-    for (var i = 0; i < drinkIMA.length; i++){
-        var coctext = drinkIMA[0]
-
-        if (drinkIMA[i] !== 1){
-            coctext = coctext + ", " + drinkIMA[i] 
-        }else{
-            return;
-        }
+    for (var i = 1; i < drinkIMA.length; i++){
+        
+         coctext = coctext + ", " + drinkIMA[i] 
     }
     cocIMA.textContent = coctext
     cocHelp.textContent = drinkInstructions
