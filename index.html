@@ -45,7 +45,7 @@
     <div class="columns">
         <div class="column is-one-quarter">
             <!-- Top of column for filter form -->
-            <div class="field row column-styling">
+            <div class="field row column-styling" id="form" data-parsley-checkmin="1" required>
                 <h2 id="search">Find Your Perfect Recipe</h2>
                 <input type="text" class="input is-info is-small is-hovered is-rounded" id="search-bar" placeholder="Search...">
                 <h4>Health</h4>
@@ -92,15 +92,15 @@
                     <input id="american" name="american" type="checkbox">
                     American
                 </label>
-                <label for="asian"class="checkbox">
+                <label for="asian" class="checkbox">
                     <input id="asian" name="asian"type="checkbox">
                     Asian
                 </label>
-                <label for="indian"class="checkbox">
+                <label for="indian" class="checkbox">
                     <input id="indian" name="indian"type="checkbox">
                     Indian
                 </label>
-                <label for="mediterranean"class="checkbox">
+                <label for="mediterranean" class="checkbox">
                     <input id="mediterranean" name="mediterranean" type="checkbox">
                     Mediterranean
                 </label>
@@ -108,7 +108,7 @@
                 <button type="submit" id="subBtn" class="button is-info is-rounded">Search</button>
             </div>
             <!-- Bottom of column for favorites -->
-            <div id ="localFav" class="favorites">
+            <div id="localFav" class="favorites">
                 <h2 id="favorites">Favorite Recipe</h2>
                 <p id="favP"></p>
 
@@ -148,16 +148,25 @@
             <a href="#top-of-page">Home</a>
             <a href="#favorites">Favorites</a>
             <a href="#search">Find More Recipes</a>
+            <!-- <a id="todayDate" class="lead"></a>
+            <a class="lead">Check to see if today is a holiday!</a> -->
         </div>
         <br>
         <div class="column subscribe-cont">
-            <label class="label subscribe-name">Subscribe to Our Newsletter</label>
-            <input class="input is-rounded subscribe" placeholder="Email">
-            <button class="button is-rounded">Submit</button>
+            <div>
+                <label class="label subscribe-name">Subscribe to Our Newsletter</label>
+                <input class="input is-rounded subscribe" placeholder="Email" name="input">
+                <button class="button is-rounded" id="subscribe-btn" name="submit">Submit</button>
+            </div>
+            <div>
+                <a id="todayDate" class="lead"></a>
+                <a class="lead">Check to see if today is a holiday!</a>
+            </div>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="Assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="Assets/JS/script.js"></script>
 </body>
 </html>
 
