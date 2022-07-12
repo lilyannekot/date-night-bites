@@ -287,6 +287,7 @@ function apiEdamamCall(apiEdamam){
     
             head4.textContent = "No recipes for that selection"
             img4.src = noFood
+            return;
         }
 
     // grabbing the first recipe name

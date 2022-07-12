@@ -2,7 +2,7 @@
 
 ## Project Summary
 
-Date Night Bites is your new go-to for finding new and exciting recipes to cook with your loved ones. Select from 13 different filters including health preferences, diet, meal type, and cuisine type to specify your recipe search. Click "Learn More" on a recipe to view ingredients and save your favorite dish. To include some spontaneity, find a randomly generated beverage to go with your selected meal.
+[Date Night Bites](https://lilyannekot.github.io/date-night-bites/) is your new go-to for finding new and exciting recipes to cook with your loved ones. Select from 13 different filters including health preferences, diet, meal type, and cuisine type to specify your recipe search. Click "Learn More" on a recipe to view ingredients and save your favorite dish. To include some spontaneity, find a randomly generated beverage to go with your selected meal.
 
 ## Languages and Technology Used
 
@@ -18,7 +18,21 @@ Date Night Bites is your new go-to for finding new and exciting recipes to cook 
 
 ![Date-Night-Bites](Assets/Images/Project-Demo.gif)
 
-# Code Snippet
+# User Story Demonstration
+
+"As a user, once I apply the filters, I want to see a table of possible recipes so that I can pick one that meets my filters."
+
+![User Story Gif](Assets/Images/User-Story-3.gif)
+
+# CSS Framework - Bulma
+
+[Bulma](https://bulma.io/documentation/) is a free, open source framework that provides ready-to-use frontend components that you can use to build responsive.
+
+![Bulma](Assets/Images/Screen-Responsiveness-Gif.gif)
+
+# Learning Objectives
+
+# Additional Code Snippet
 
 Here's an example of how we were able to generate the title of the recipe under the favorites section on the website. The recipe title, is also stored locally.
 
