@@ -1,0 +1,260 @@
+:root {
+--content-font-color: black;
+--white: white;
+--blue: hsl(217, 71%, 53%);
+--filter-background-color: rgb(230, 230, 230);
+}
+
+.hero {
+    text-align: center;
+}
+
+.logo {
+    height: 300px;
+    width: 400px;
+}
+
+.subtitle {
+    font-size: 25px;
+    padding-top: 0px;
+}
+
+.navbar {
+    position: fixed;
+    background-color: var(--blue) !important;
+    width: 100%;
+}
+
+.field {
+    padding-bottom: 700px;
+}
+
+.column-styling {
+    color: var(--content-font-color);
+    background-color: var(--filter-background-color);
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+/* For styling filters section in left-hand column */
+.column-styling h2 {
+    color: var(--content-font-color);
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.column-styling h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.column-styling button {
+    margin-top: 15px;
+}
+
+#search-bar {
+    width: 350px;
+}
+
+/* For styling favorites section in left-hand column */
+.favorites {
+    color: var(--content-font-color);
+    background-color: var(--filter-background-color);
+    text-align: center;
+    padding-bottom: 30%;
+}
+
+.favorites h2 {
+    color: var(--content-font-color);
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    padding-top: 10px;
+    
+}
+
+/* For styling cocktails in bottom row above footer */
+.cocktails {
+    text-align: center;
+    font-size: 25px;
+    color: var(--content-font-color);
+    padding-top: 15px;
+    padding-bottom: 150px;
+    background-color: var(--filter-background-color);
+}
+
+.cocktails h2 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#cocktail-img {
+    padding-top: 40px;
+    size: 25%;
+}
+
+.cocktail-par {
+    color: black;
+}
+
+/* Styling for footer */
+
+footer p {
+    inline-size: 400px;
+}
+
+footer a {
+    display: block;
+    color: var(--white);
+    font-size: 20px;
+    padding: 3px;
+    text-align: center;
+    position: relative;
+    top: 150px;
+}
+
+/* Logo with slogan underneath in footer */
+.logo-with-text {
+    text-align: center;
+    width: 300px;
+}
+
+.logo-with-text p {
+    display: block;
+    margin: 0 auto;
+}
+
+.slogan {
+    color: var(--white);
+}
+
+/* Styling subscribe element in footer */
+.subscribe-cont {
+    position: relative;
+    top: 150px;
+}
+
+.subscribe-name {
+    color: var(--white);
+}
+
+.subscribe {
+    width: 350px;
+}
+
+.slogan {
+    color: var(--white);
+}
+
+/* Table styling */
+table {
+    width: 95%;
+}
+.row03{
+    height: 150px;
+    background-color: var(--filter-background-color);
+}
+
+.row13{
+    background-color: var(--filter-background-color);    
+}
+
+.row13 button{
+    width: 35%;
+    color: var(--white);
+    background-color: #3e8ed0;
+    border: none;
+    border-radius: 50%;
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+}
+
+.row13 button:hover{
+    background-color: rgb(35, 116, 182);
+    border: none;
+}
+
+/* For changes in viewport size */
+
+@media screen and (min-width: 992px) {
+   body {
+        width: 100%;
+   }
+   #cocktail-img {
+        width: 25%;
+}
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        width: 100%;
+    }
+    .subtitle {
+        font-size: 25px;
+    }
+    .column-styling h2 {
+        font-size: 25px;
+    }
+    .column-styling h4 {
+        font-size: 20px;
+    }
+    .column-styling label {
+        font-size: 20px;
+    }
+    .favorites h2 {
+        font-size: 25px;
+    }
+    .cocktails h2 {
+        font-size: 25px;
+    }
+    .subscribe-cont {
+        text-align: center;
+    }
+    .logo-with-text {
+        align-items: center;
+        width: 85%;
+    }
+ }
+
+ @media screen and (min-width: 375px) {
+    body {
+     width: 100%;
+    }
+    .subtitle {
+        font-size: 20px;
+    }
+    .column-styling h2 {
+        font-size: 20px;
+    }
+    .column-styling h4 {
+        font-size: 15px;
+    }
+    .column-styling label {
+        font-size: 15px;
+    }
+    .favorites h2 {
+        font-size: 20px;
+    }
+    .cocktails h2 {
+        font-size: 20px;
+    }
+    .cocktail-par {
+        font-size: 15px;
+    }
+    .subscribe-cont {
+        text-align: center;
+    }
+    .logo-with-text {
+        width: 75%;
+        margin: auto;
+    }
+    .subscribe-cont {
+        padding-bottom: 75px;
+    }
+ }

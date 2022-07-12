@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="Assets/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="Assets/CSS/parsley.css">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
     <title>Date Night Bites</title>
     <link rel="shortcut icon" href="Assets/Images/Date Night Bites (1).png">
 </head>
@@ -45,9 +45,9 @@
     <div class="columns">
         <div class="column is-one-quarter">
             <!-- Top of column for filter form -->
-            <div class="field row column-styling" id="form" data-parsley-checkmin="1" required>
+            <div class="field row column-styling">
                 <h2 id="search">Find Your Perfect Recipe</h2>
-                <input type="text" class="input is-info is-small is-hovered is-rounded" id="search-bar" placeholder="Search...">
+                <input type="text" class="input is-info is-small is-hovered is-rounded" id="search-bar" placeholder="Search..." data-parsley-validate="" required data-parsley-pattern="^[a-zA-Z ]+$" data-parsley-error-message="No numbers or symbols are allowed!">
                 <h4>Health</h4>
                 <label for="vegetarian" class="checkbox">
                     <input id="vegetarian" name="vegetarian" type="checkbox">
@@ -165,6 +165,7 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="Assets/JS/parsley.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="Assets/JS/script.js"></script>
 </body>
