@@ -11,7 +11,7 @@
 * **JavaScript**
 * **jQuery:** JavaScript library used for event handling and Ajax requests
 * **Moment:** JavaScript library used for parsing, validating, manipulating, and displaying the date/time
-* **Parsley:** 
+* **Parsley:** Used for form validation
 * **Bulma:** CSS Framework
 * **Edamam Recipe API:** API for recipe information and images 
 * **TheCocktailDB:** API for cocktail recipes
