@@ -26,7 +26,7 @@
 
 ![User Story Gif](Assets/Images/User-Story-3.gif)
 
-"As a user, I want to click on learn more, so more relevant recipe information is displayed.
+"As a user, I want to click on learn more, so more relevant recipe information is displayed."
 
 ![User Story Recipe](https://github.com/lilyannekot/date-night-bites/blob/main/DNB%20recipe.gif)
 
