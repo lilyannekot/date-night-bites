@@ -147,24 +147,20 @@ footer a {
     width: 350px;
 }
 
-.slogan {
-    color: var(--white);
-}
-
 /* Table styling */
 table {
     width: 95%;
 }
-.row03{
+.row03 {
     height: 150px;
     background-color: var(--filter-background-color);
 }
 
-.row13{
+.row13 {
     background-color: var(--filter-background-color);    
 }
 
-.row13 button{
+.row13 button {
     width: 35%;
     color: var(--white);
     background-color: #3e8ed0;
@@ -175,7 +171,7 @@ table {
     padding: 10px;
 }
 
-.row13 button:hover{
+.row13 button:hover {
     background-color: rgb(35, 116, 182);
     border: none;
 }

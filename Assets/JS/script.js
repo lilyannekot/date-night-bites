@@ -747,21 +747,6 @@ function makeFav(event){
 
 favloc.addEventListener("click", makeFav)
 
-// Local storage for subscribe button
-var subscribeInput = document.getElementById("subscribe")
-var subscribeBtn = document.getElementById("subscribe-btn")
-
-function subscribeEmail(event){
-
-    var subscribe = event.target
-    var email = subscribe.getAttribute("data-target", subscribeInput)
-    email = JSON.stringify(email)
-
-    localStorage.setItem("input", email)
-    subscribeEmail();
-}
-
-subscribeBtn.addEventListener("click", subscribeEmail)
 
 
 
