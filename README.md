@@ -13,6 +13,8 @@
 * **Moment:** JavaScript library used for parsing, validating, manipulating, and displaying the date/time
 * **Parsley:** 
 * **Bulma:** CSS Framework
+* **Edamam Recipe API:** API for recipe information and images 
+* **TheCocktailDB:** API for cocktail recipes
 
 # Project Demonstration
 
@@ -24,6 +26,33 @@
 
 ![User Story Gif](Assets/Images/User-Story-3.gif)
 
+"As a user, I want to click on learn more, so more relevant recipe information is displayed.
+
+![User Story Recipe](https://github.com/lilyannekot/date-night-bites/blob/main/DNB%20recipe.gif)
+
+```
+function button0Call(){
+    var recipeURL = tableArr[0]
+    console.log(recipeURL)
+    $.ajax({
+        url: recipeURL,
+        method: 'GET',
+    }).then(function (response){
+        var recLabel0 = response.recipe.label
+        console.log("recipe content", recLabel0)
+        var recipeImg0 = response.recipe.images.REGULAR.url
+        console.log("recipe image 0", recipeImg0)
+        var recipeIngredientLines0 = response.recipe.ingredientLines
+        console.log(recipeIngredientLines0)
+        var recipeCalories0 = response.recipe.calories
+        recipeCalories0 = Math.floor(recipeCalories0)
+        console.log(recipeCalories0)
+        var recipeTotalTime0 = response.recipe.totalTime 
+        console.log(recipeTotalTime0)
+        var btnURL0 = response.recipe.shareAs
+        console.log(btnURL0)
+        generateBtn0(recLabel0, recipeImg0, recipeIngredientLines0, recipeCalories0, recipeTotalTime0, btnURL0)
+``` 
 # CSS Framework - Bulma
 
 [Bulma](https://bulma.io/documentation/) is a free, open source framework that provides ready-to-use frontend components that you can use to build responsive.
@@ -31,6 +60,8 @@
 ![Bulma](Assets/Images/Screen-Responsiveness-Gif.gif)
 
 # Learning Objectives
+
+The goal was to learn new API's and apply them with a concept we developed as a group. Learning API's understanding server-side requests and formatting the data was a challenge but an amazing learning experience.
 
 # Additional Code Snippet
 
