@@ -45,9 +45,9 @@
     <div class="columns">
         <div class="column is-one-quarter">
             <!-- Top of column for filter form -->
-            <div class="field row column-styling">
+            <div class="field row column-styling" data-parsley-validate>
                 <h2 id="search">Find Your Perfect Recipe</h2>
-                <input type="text" class="input is-info is-small is-hovered is-rounded" id="search-bar" placeholder="Search..." data-parsley-validate="" required data-parsley-pattern="^[a-zA-Z ]+$" data-parsley-error-message="No numbers or symbols are allowed!">
+                <input type="text" class="input is-info is-small is-hovered is-rounded" id="search-bar" placeholder="Search..." required data-parsley-pattern="^[a-zA-Z]+$" data-parsley-error-message="No numbers or symbols are allowed!">
                 <h4>Health</h4>
                 <label for="vegetarian" class="checkbox">
                     <input id="vegetarian" name="vegetarian" type="checkbox">
@@ -153,14 +153,13 @@
         </div>
         <br>
         <div class="column subscribe-cont">
-            <div>
+            <form id="form" data-parsley-validate>
                 <label class="label subscribe-name">Subscribe to Our Newsletter</label>
-                <input class="input is-rounded subscribe" placeholder="Email" name="input">
+                <input class="input is-rounded subscribe" placeholder="Email" name="input" data-parsley-type="email">
                 <button class="button is-rounded" id="subscribe-btn" name="submit">Submit</button>
-            </div>
+            </form>
             <div>
                 <a id="todayDate" class="lead"></a>
-                <a class="lead">Check to see if today is a holiday!</a>
             </div>
         </div>
     </footer>
@@ -170,6 +169,3 @@
     <script src="Assets/JS/script.js"></script>
 </body>
 </html>
-
-
-
